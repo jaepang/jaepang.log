@@ -7,11 +7,11 @@ const shouldAnalyseBundle = process.env.ANALYSE_BUNDLE
 module.exports = {
   siteMetadata: {
     siteTitle: `jaepang.log`,
-    siteTitleAlt: `log of jaepang`,
+    siteTitleAlt: `jaepang.log`,
     siteHeadline: `log of jaepang`,
     siteUrl: `https://log.jaepang.dev`,
-    siteDescription: `Typography driven, feature-rich blogging theme with minimal aesthetics. Includes tags/categories support and extensive features for code blocks such as live preview, line numbers, and line highlighting.`,
-    siteLanguage: `en`,
+    siteDescription: `개발자이자 인간 신재광의 로그가 찍히는 공간입니다.`,
+    siteLanguage: `ko/en`,
     siteImage: `/banner.jpg`,
     author: `@jaepang`,
   },
@@ -37,7 +37,7 @@ module.exports = {
           },
           {
             name: `Instagram`,
-            url: `https://www.instagram.com/lekoarts.de/`,
+            url: `https://www.instagram.com/jk_extends_soldier/`,
           },
         ],
         formatString: `YYYY년 M월 D일`
@@ -61,9 +61,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `minimal-blog - @lekoarts/gatsby-theme-minimal-blog`,
-        short_name: `minimal-blog`,
-        description: `Typography driven, feature-rich blogging theme with minimal aesthetics. Includes tags/categories support and extensive features for code blocks such as live preview, line numbers, and code highlighting.`,
+        name: `jaepang.log`,
+        short_name: `jk log`,
+        description: `개발자이자 인간 신재광의 로그가 찍히는 공간입니다.`,
         start_url: `/`,
         background_color: `#fff`,
         theme_color: `#EE5DA9`,
