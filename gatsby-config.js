@@ -6,7 +6,14 @@ const shouldAnalyseBundle = process.env.ANALYSE_BUNDLE
 
 module.exports = {
   siteMetadata: {
-    siteTitleAlt: `Minimal Blog - Gatsby Theme`,
+    siteTitle: `jaepang.log`,
+    siteTitleAlt: `log of jaepang`,
+    siteHeadline: `log of jaepang`,
+    siteUrl: `https://log.jaepang.dev`,
+    siteDescription: `Typography driven, feature-rich blogging theme with minimal aesthetics. Includes tags/categories support and extensive features for code blocks such as live preview, line numbers, and line highlighting.`,
+    siteLanguage: `en`,
+    siteImage: `/banner.jpg`,
+    author: `@jaepang`,
   },
   plugins: [
     {
@@ -25,15 +32,24 @@ module.exports = {
         ],
         externalLinks: [
           {
-            name: `Twitter`,
-            url: `https://twitter.com/lekoarts_de`,
+            name: `Github`,
+            url: `https://github.com/jaepang`,
           },
           {
             name: `Instagram`,
             url: `https://www.instagram.com/lekoarts.de/`,
           },
         ],
+        formatString: `YYYY년 MM월 DD일`
       },
+    },
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        google: {
+          families: ['Pacifico', 'Song Myung', 'Gelasio', 'Arizonia', 'Ubuntu Mono']
+        }
+      }
     },
     {
       resolve: `gatsby-plugin-google-analytics`,
@@ -50,7 +66,7 @@ module.exports = {
         description: `Typography driven, feature-rich blogging theme with minimal aesthetics. Includes tags/categories support and extensive features for code blocks such as live preview, line numbers, and code highlighting.`,
         start_url: `/`,
         background_color: `#fff`,
-        theme_color: `#6B46C1`,
+        theme_color: `#EE5DA9`,
         display: `standalone`,
         icons: [
           {
@@ -66,6 +82,7 @@ module.exports = {
         ],
       },
     },
+    `gatsby-plugin-catch-links`,
     `gatsby-plugin-offline`,
     `gatsby-plugin-netlify`,
     shouldAnalyseBundle && {
