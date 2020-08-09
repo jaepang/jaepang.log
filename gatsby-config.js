@@ -40,7 +40,7 @@ module.exports = {
             url: `https://www.instagram.com/lekoarts.de/`,
           },
         ],
-        formatString: `YYYY년 MM월 DD일`
+        formatString: `YYYY년 M월 D일`
       },
     },
     {
