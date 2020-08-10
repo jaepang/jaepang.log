@@ -44,7 +44,7 @@ const code = {
     fontFamily: `Ubuntu Mono`,
     fontSize:  [`0.75rem`, `1rem`],
     //backgroundColor: `#2C3643`,
-    backgroundColor: `#EDECEB`,
+    backgroundColor: `inlineCode`,
     //color: `#f8f8f2`,
     color: `primary`,
     px: 2,
