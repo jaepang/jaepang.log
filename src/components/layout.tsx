@@ -48,6 +48,9 @@ const Layout = ({ children, className = `` }: LayoutProps) => (
             textDecoration: `none !important`,
           },
         },
+        ".utterances": {
+          maxWidth: `100% !important`
+        }
       })}
     />
     <SEO />

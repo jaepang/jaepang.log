@@ -4,6 +4,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 import React from "react"
 import Layout from "./layout"
 import ItemTags from "./item-tags"
+import Utterance from "./utterance"
 import SEO from "./seo"
 
 type PostProps = {
@@ -43,7 +44,7 @@ const Post = ({ data: { post } }: PostProps) => (
       pathname={post.slug}
     />
     <Heading variant="styles.header">{post.title}</Heading>
-    <p sx={{ color: `secondary`, mt: 3, a: { color: `secondary` }, fontSize: [1, 1, 2] }}>
+    <p sx={{ color: `secondary`, mt: 3, a: { color: `secondary` }, fontSize: 1 }}>
       <time>{post.date}</time>
       {post.tags && (
         <React.Fragment>
@@ -55,7 +56,8 @@ const Post = ({ data: { post } }: PostProps) => (
     <section sx={{ my: 5, ".gatsby-resp-image-wrapper": { my: [4, 4, 5], boxShadow: shadow.join(`, `) } }}>
       <MDXRenderer>{post.body}</MDXRenderer>
     </section>
-    <ItemTags tags={post.tags} isOnList={false} />
+    <ItemTags sx={{variant: `divider.bottom`}} tags={post.tags} isOnList={false} />
+    <Utterance repo={`jaepang/jaepang.log`} />
   </Layout>
 )
 
