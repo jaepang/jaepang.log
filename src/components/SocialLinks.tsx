@@ -82,6 +82,7 @@ const SocialIconContainer = styled.a`
   position: relative;
   text-decoration: none;
   max-width: 16px;
+  margin: 8px;
   svg {
     fill: ${p => p.theme.colors.sub};
   }
