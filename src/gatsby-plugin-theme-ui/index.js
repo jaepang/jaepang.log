@@ -10,7 +10,7 @@ const theme = merge(tailwind, {
     background: `#FFF`,
     inlineCode: `#EDECEB`,
     toggleIcon: tailwind.colors.gray[8],
-    heading: `#1A202C`,
+    heading: `#000`,
     header: `#FFFFFF`,
     divide: tailwind.colors.gray[4],
     sub: `rgb(134, 142, 150)`,
@@ -20,7 +20,8 @@ const theme = merge(tailwind, {
         secondary: `#7f8ea3`,
         inlineCode: `#3C3F41`,
         toggleIcon: tailwind.colors.gray[4],
-        background: `#1A202C`,
+        //background: `#1A202C`,
+        background: `#000`,
         heading: tailwind.colors.white,
         header: `#212938`,
         divide: tailwind.colors.gray[8],
@@ -170,7 +171,7 @@ const theme = merge(tailwind, {
       //paddingBottom: `3%`,
       //paddingLeft: [`5%`, `10%`],
       //paddingRight: [`5%`, `10%`],
-      maxWidth: `1024px`,
+      maxWidth:`1220px`,
     },
   },
   text: {
@@ -200,6 +201,7 @@ const theme = merge(tailwind, {
       color: `sub`,
       textDecoration: `none`,
       transition: `color 0.3s ease`,
+      margin: `8px`,
       ":hover": { 
         transition: `color 0.3s ease`,
         color: `heading` 

@@ -1,8 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
-import { Link } from "gatsby"
 import Layout from "./layout"
-import Title from "./title"
 import Listing from "./listing"
 import List from "./list"
 import useMinimalBlogConfig from "../hooks/use-minimal-blog-config"
@@ -31,23 +29,60 @@ const Homepage = ({ posts }: PostsProps) => {
   const { basePath, blogPath } = useMinimalBlogConfig()
 
   return (
-    <Layout>
+    <Layout isHome={true}>
       <section 
-        sx={{ 
-          my: [3, 4, 5],
-          padding: `5%`, 
-          backgroundColor: `header`, 
-          borderStyle: `solid`,
-          borderWidth: `1px`,
-          borderColor: `divide`,
-          borderRadius: `15px`,
+        sx={{
+          fontSize: 0,
+          color: `#fff`,
+          backgroundColor: `#000`,
+          py: `2%`,
+          width: `100vw`,
+          ml: `calc(-50vw + 50%)`,
+          height: `82vh`,
+          "@media screen and (max-width: 1300px)": {
+            height: `86vh`
+          },
+          h2: {
+            color: `#fff !important`,
+            fontSize: [5, 6, 7],
+            mb: [2, 3, 4]
+          },
           p: { 
-            fontSize: [1, 2, 3], 
+            fontSize: [1, 2], 
             mt: 2 
           }
           }}
         >
-        <Hero />
+        <div className="hero-wrapper" 
+          sx={{
+            maxWidth: `1220px`,
+            margin: `0 auto`
+          }}
+        >
+        <div className="hero"
+          sx={{
+            display: `inline-block`,
+            verticalAlign: `top`,
+            pt: `15vh`,
+            px: `2rem`,
+            "@media screen and (min-width: 1301px)": {
+              px: 0,
+              width: `50%`,
+            },
+          }}
+        >
+          <Hero/>
+        </div>
+        <img src="https://github.com/jaepang/logo/blob/master/logo-white-transpatent.png?raw=true')"
+          sx={{
+            display: `inline-block`,
+            width: `50%`,
+            "@media screen and (max-width: 1300px)": {
+              display: `none`
+            },
+          }}
+        />
+        </div>
       </section>
       <Listing title="" posts={posts} showTags={true} 
               showLink={true} link={replaceSlashes(`/${basePath}/${blogPath}`)} />

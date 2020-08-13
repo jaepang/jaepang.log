@@ -1,37 +1,43 @@
 /** @jsx jsx */
-import { useState } from "react";
 import { jsx, useColorMode } from "theme-ui"
 import { Flex } from "@theme-ui/components"
+import { tailwind } from "@theme-ui/presets"
 import useMinimalBlogConfig from "../hooks/use-minimal-blog-config"
 import SharePageButton from "./share-page-button"
 import ColorModeToggle from "./colormode-toggle"
 import HeaderTitle from "./header-title"
-import Icons from "./icons"
 
-const Header = () => {
+type HeaderProps = {isHome?: boolean}
+
+const Header = ({isHome=false} : HeaderProps) => {
   const { navigation: nav } = useMinimalBlogConfig()
   const [colorMode, setColorMode] = useColorMode()
+  let bgColor = `transparent`
   const isDark = colorMode === `dark`
   const toggleColorMode = (e: any) => {
     e.preventDefault()
     setColorMode(isDark ? `light` : `dark`)
   }
-
+  if(isHome) {
+    bgColor = `#000`
+  }
   return (
     <header 
       sx={{
-        my: [3, 4, 5], 
-        width: `100vw`, 
+        pt: `8vh`, 
+        "@media screen and (max-width: 1300px)": {
+          pt: `4vh`
+        },
+        width: `100vw`,
+        height: `18vh`,
         marginLeft: `calc(-50vw + 50%)`,
-        backgroundColor: `background`,
+        backgroundColor: bgColor,
         px: `2.7rem`,
-        pt: `1rem`,
-        pb: `1.5rem`
       }}
     >
       <div
         sx={{
-          maxWidth: `1024px`,
+          maxWidth: `1220px`,
           margin: `auto`,
           alignItems: `center`, 
           justifyContent: `space-between`,
@@ -43,7 +49,7 @@ const Header = () => {
             justifyContent: `space-between`,
           }}
         >
-          <HeaderTitle />
+          <HeaderTitle isHome={isHome} />
           <div 
             sx={{
               display: `flex`
@@ -60,3 +66,11 @@ const Header = () => {
 }
 
 export default Header
+/*<div 
+            sx={{
+              display: `flex`
+            }}
+          >
+            <SharePageButton isDark={isDark}/>
+            <ColorModeToggle isDark={isDark} toggle={toggleColorMode} />
+          </div> */
