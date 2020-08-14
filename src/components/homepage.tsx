@@ -47,7 +47,8 @@ const Homepage = ({ posts }: PostsProps) => {
             fontSize: [5, 6, 7],
             mb: [2, 3, 4]
           },
-          p: { 
+          p: {
+            color: `sub`,
             fontSize: [1, 2], 
             mt: 2 
           }
