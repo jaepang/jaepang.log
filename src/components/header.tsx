@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { jsx, useColorMode } from "theme-ui"
 import { Flex } from "@theme-ui/components"
-import { tailwind } from "@theme-ui/presets"
 import useMinimalBlogConfig from "../hooks/use-minimal-blog-config"
 import SharePageButton from "./share-page-button"
 import ColorModeToggle from "./colormode-toggle"
@@ -50,14 +49,25 @@ const Header = ({isHome=false} : HeaderProps) => {
           }}
         >
           <HeaderTitle isHome={isHome} />
-          <div 
-            sx={{
-              display: `flex`
-            }}
-          >
-            <SharePageButton isDark={isDark}/>
-            <ColorModeToggle isDark={isDark} toggle={toggleColorMode} />
-          </div>
+            {!isHome && (
+              <div 
+                sx={{
+                  display: `flex`
+                }}
+              >
+                <SharePageButton isDark={isDark}/>
+                <ColorModeToggle isDark={isDark} toggle={toggleColorMode} />
+              </div>
+            )}
+            {isHome && (
+              <div 
+                sx={{
+                  display: `flex`
+                }}
+              >
+                
+              </div>
+            )}
         </Flex>
         
       </div>
