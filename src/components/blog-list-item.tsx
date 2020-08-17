@@ -14,6 +14,13 @@ type BlogListItemProps = {
     excerpt: string
     description: string
     timeToRead?: number
+    banner?: {
+      childImageSharp: {
+        resize: {
+          src: string
+        }
+      }
+    }
     tags?: {
       name: string
       slug: string
@@ -28,16 +35,19 @@ console.log(date)
 
 const BlogListItem = ({ post, showTags = true }: BlogListItemProps) => (
   <TLink as={Link} to={post.slug} sx={{width: [`100%`, `50%`, `50%`, `33%`],}}>
+    {post.banner && (
+      <img src= {post.banner.childImageSharp.resize.src}/>
+    )}
   <Box
     sx={{
       margin: `1rem`,
       padding: `2rem`, 
       pt: post.tags && showTags ? 0:`2rem`,
       backgroundColor: `header`, 
-      borderStyle: `solid`,
-      borderWidth: `1px`,
-      borderColor: `divide`,
-      borderRadius: `15px`,
+      //borderStyle: `solid`,
+      //borderWidth: `1px`,
+      //borderColor: `divide`,
+      //borderRadius: `15px`,
       //width: `20rem`,
       height: `20rem`,
       display: `flex`,

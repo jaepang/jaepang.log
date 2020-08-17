@@ -18,6 +18,13 @@ type PostsProps = {
     excerpt: string
     description: string
     timeToRead?: number
+    banner?: {
+      childImageSharp: {
+        resize: {
+          src: string
+        }
+      }
+    }
     tags?: {
       name: string
       slug: string
