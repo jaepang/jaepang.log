@@ -42,7 +42,6 @@ const Homepage = ({ posts }: PostsProps) => {
           fontSize: 0,
           color: `#fff`,
           backgroundColor: `#000`,
-          py: `2%`,
           width: `100vw`,
           ml: `calc(-50vw + 50%)`,
           height: `82vh`,
@@ -71,7 +70,7 @@ const Homepage = ({ posts }: PostsProps) => {
           sx={{
             display: `inline-block`,
             verticalAlign: `top`,
-            pt: `15vh`,
+            pt: `20vh`,
             px: `2rem`,
             "@media screen and (min-width: 1301px)": {
               px: 0,
