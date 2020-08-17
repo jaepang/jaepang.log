@@ -34,49 +34,69 @@ date = today.getDate()
 console.log(date)
 
 const BlogListItem = ({ post, showTags = true }: BlogListItemProps) => (
-  <TLink as={Link} to={post.slug} sx={{width: [`100%`, `50%`, `50%`, `33%`],}}>
-    {post.banner && (
-      <img src= {post.banner.childImageSharp.resize.src}/>
-    )}
+  <TLink as={Link} to={post.slug}
+    sx={{
+      "@media screen and (min-width: 1051px)": {
+        "&:nth-child(4n-1)": {
+          gridColumn: `span 2`
+        },
+        "&:nth-child(4n-2)": {
+          gridColumn: `span 2`
+        },
+      }
+    }}
+  >
   <Box
     sx={{
       margin: `1rem`,
       padding: `2rem`, 
-      pt: post.tags && showTags ? 0:`2rem`,
-      backgroundColor: `header`, 
-      //borderStyle: `solid`,
-      //borderWidth: `1px`,
-      //borderColor: `divide`,
-      //borderRadius: `15px`,
-      //width: `20rem`,
-      height: `20rem`,
-      display: `flex`,
-      flexDirection: `column`,
+      backgroundColor: `header`,
+      h4: {
+        mt: 0
+      },
       p: { 
         fontSize: [1, 2], 
         mt: 2 
+      },
+      "&:hover": {
+        h4: {
+          color: `primary`,
+          transition: `color 0.3s ease`
+        },
+        img: {
+          transform: `translateY(-1px)`,
+          boxShadow: `0 50px 80px -20px rgba(0, 0, 0, 0.27), 
+                      0 30px 50px -30px rgba(0, 0, 0, 0.3)`,
+          transition: `transform 0.3s ease-out, 
+                      box-shadow 0.3s ease-out`
+        }
       }
     }}
   >
-
-    <div className={`tags`} sx={{display: `flex`, flexDirection: `row`}}>
-      {post.tags && showTags && (
-        <React.Fragment>
-          <ItemTags tags={post.tags} isOnList={true}
-            sx= {{
-              top: 0
-            }}
-          />
-        </React.Fragment>
-      )}
-    </div>
-    <div
-      sx={{
-        height: `90%`
-      }}
-    >
-      <h4 sx={{ fontWeight: `bold`, fontSize: [`1.3rem`, `1rem`, `1rem`, `1.25rem`], color: `text`, mb: `1rem` }}>
-        <WordLimit limit={50}>
+    {post.banner && (
+        <img src= {post.banner.childImageSharp.resize.src}
+        sx={{
+          objectFit: `cover`,
+          objectPosition: `center center`,
+          width: `100%`,
+          height: `300px`,
+          borderRadius: `5px`,
+          mb: `25px`,
+          transition: `transform 0.3s ease-out, 
+                      box-shadow 0.3s ease-out`
+        }}
+      />
+    )}
+    <div>
+      <h4 
+        sx={{ 
+          fontWeight: `bold`, 
+          fontSize: `1.3rem`, 
+          color: `text`, 
+          mb: `1rem` 
+        }}
+      >
+        <WordLimit limit={70}>
           {post.title}
         </WordLimit>
       </h4>

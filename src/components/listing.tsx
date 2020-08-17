@@ -42,7 +42,7 @@ const Listing = ({ title, posts, className = ``, showTags = true, showLink = fal
       }
     }}
   >
-    <Title text={title}>
+    <Title text={title} sx={{mt: `2em`}}>
     {showLink && (
       <Link to={link}>Read all posts</Link>
     )}
@@ -50,8 +50,16 @@ const Listing = ({ title, posts, className = ``, showTags = true, showLink = fal
     <section className={className}
       sx={{
         margin: `-1rem`,
-        display: `flex`,
-        flexWrap: `wrap`,
+        display: `grid`,
+        alignContent: `stretch`,
+        justifyContent: `stretch`,
+        gridTemplateColumns: `1fr 25% 1fr`,
+        "@media screen and (max-width: 1250px)": {
+          //gridTemplateColumns: `1fr 25% 1fr`,
+          "@media screen and (max-width: 1050px)": {
+            gridTemplateColumns: `1fr`,
+          },
+        }
       }}
     >
       {posts.map((post) => (
