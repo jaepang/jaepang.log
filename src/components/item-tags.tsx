@@ -20,8 +20,6 @@ const ItemTags = ({ tags, isOnList=false }: TagsProps) => {
     fontWeight: `light`,
     backgroundColor: tint(`primary`, 0.2),
     borderRadius: `5px`,
-    borderTopLeftRadius: isOnList ? 0:`5px`,
-    borderTopRightRadius: isOnList ? 0:`5px`,
     fontSize: `0.8rem`,
     padding: `0.5rem`,
     a: {
