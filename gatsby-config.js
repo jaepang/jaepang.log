@@ -9,7 +9,7 @@ module.exports = {
     siteTitle: `jaepang.log`,
     siteTitleAlt: `jaepang.log`,
     siteHeadline: `log of jaepang`,
-    siteUrl: `https://log.jaepang.dev`,
+    siteUrl: `http://code.jaepang.dev:8000`,
     siteDescription: `개발자이자 인간 신재광의 로그가 찍히는 공간입니다.`,
     siteLanguage: `ko/en`,
     siteImage: `/banner.jpg`,
@@ -43,6 +43,7 @@ module.exports = {
         formatString: `YYYY년 M월 D일`
       },
     },
+    
     {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
