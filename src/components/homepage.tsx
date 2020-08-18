@@ -92,7 +92,7 @@ const Homepage = ({ posts }: PostsProps) => {
         </div>
       </section>
       <Listing title="" posts={posts} showTags={true} 
-              showLink={true} link={replaceSlashes(`/${basePath}/${blogPath}`)} />
+              showLink={false} link={replaceSlashes(`/${basePath}/${blogPath}`)} />
       <List>
         <Bottom />
       </List>

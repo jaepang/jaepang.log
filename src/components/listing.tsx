@@ -53,10 +53,11 @@ const Listing = ({ title, posts, className = ``, showTags = true, showLink = fal
         display: `grid`,
         alignContent: `stretch`,
         justifyContent: `stretch`,
-        gridTemplateColumns: `1fr 25% 1fr`,
-        "@media screen and (max-width: 1250px)": {
-          //gridTemplateColumns: `1fr 25% 1fr`,
-          "@media screen and (max-width: 1050px)": {
+        rowGap: `80px`,
+        gridTemplateColumns: `1fr 15% 1fr`,
+        "@media screen and (max-width: 1050px)": {
+          gridTemplateColumns: `1fr 1fr`,
+          "@media screen and (max-width: 768px)": {
             gridTemplateColumns: `1fr`,
           },
         }
