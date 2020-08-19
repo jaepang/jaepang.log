@@ -51,12 +51,12 @@ const Post = ({ data: { post } }: PostProps) => (
           {` — `}
         </React.Fragment>
       )}
-      {post.timeToRead && <span>{post.timeToRead}분이면 읽을 수 있어요!</span>}
+      {post.timeToRead && <span>{post.timeToRead}분이면 읽을 수 있어요</span>}
     </p>
-    <section sx={{ my: 5, ".gatsby-resp-image-wrapper": { my: [4, 4, 5], boxShadow: shadow.join(`, `) } }}>
+    <section sx={{ mt: 5, mb: 6, ".gatsby-resp-image-wrapper": { my: [4, 4, 5], boxShadow: shadow.join(`, `) } }}>
       <MDXRenderer>{post.body}</MDXRenderer>
     </section>
-    <ItemTags sx={{variant: `divider.bottom`}} tags={post.tags} isOnList={false} />
+    <ItemTags tags={post.tags} isOnList={false} />
     <Utterance repo={`jaepang/jaepang.log`} />
   </Layout>
 )
