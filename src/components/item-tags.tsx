@@ -16,12 +16,11 @@ type TagsProps = {
 const ItemTags = ({ tags, isOnList=false }: TagsProps) => {
   const { tagsPath, basePath } = useMinimalBlogConfig()
   const style = {
-    color: `white`,
-    fontWeight: `light`,
-    backgroundColor: tint(`primary`, 0.2),
-    borderRadius: `5px`,
-    fontSize: `0.8rem`,
-    padding: `0.5rem`,
+    color: isOnList ? `sub`:`text`,
+    bg: isOnList ? null:`inlineCode`,
+    px: isOnList ? null:`1rem`,
+    py: isOnList ? null:`0.5rem`,
+    borderRadius: isOnList ? null:`5px`,
     a: {
       "hover": {
         border: `none !important`
@@ -31,11 +30,14 @@ const ItemTags = ({ tags, isOnList=false }: TagsProps) => {
   if(isOnList) {
     return (
       <React.Fragment>
-        <React.Fragment key={tags[0].slug}>
-          <TLink as={Link} to={replaceSlashes(`/${basePath}/${tagsPath}/${tags[0].slug}`)} sx={style}>
-            {tags[0].name}
-          </TLink>
-        </React.Fragment>
+        {tags.map((tag, i) => (
+          <React.Fragment key={tag.slug}>
+            {!!i && `, `}
+            <TLink as={Link} to={replaceSlashes(`/${basePath}/${tagsPath}/${tag.slug}`)} sx={style}>
+              {tag.name}
+            </TLink>
+          </React.Fragment>
+        ))}
     </React.Fragment>
     )
   }

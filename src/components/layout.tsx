@@ -49,6 +49,7 @@ const Layout = ({ children, className = ``, isHome = false }: LayoutProps) => (
           },
         },
         ".utterances": {
+          marginTop: `2rem`,
           maxWidth: `100% !important`
         }
       })}
