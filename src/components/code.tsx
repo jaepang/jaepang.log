@@ -74,7 +74,7 @@ const Code = ({
   const shouldHighlightLine = calculateLinesToHighlight(metastring)
 
   const hasLineNumbers = !noLineNumbers && language !== `noLineNumbers` && showLineNumbers
-  const radius = {borderTopLeftRadius: `10px`, borderTopRightRadius: `10px`}
+  const radius = {borderTopLeftRadius: `5px`, borderTopRightRadius: `5px`}
 
   if (props[`react-live`]) {
     return <LazyLiveProvider code={codeString} noInline theme={theme} />

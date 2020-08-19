@@ -3,13 +3,13 @@ import { tint } from "@theme-ui/color"
 const code = {
   "[data-name='live-preview'], [data-name='live-editor']": {
     fontFamily: `Ubuntu Mono !important`,
-    mx: [0, 0, 0, -3],
+    //mx: [0, 0, 0, -3],
     zIndex: 0
   },
   "[data-name='live-editor']": {
     fontSize:  [`0.75rem`, `1rem`],
-    borderTopLeftRadius: `10px`,
-    borderTopRightRadius: `10px`,
+    borderTopLeftRadius: `5px`,
+    borderTopRightRadius: `5px`,
     "textarea, pre": {
       padding: (t: any) => `${t.space[3]} !important`,
     },
@@ -17,8 +17,8 @@ const code = {
   "[data-name='live-preview']": {
     padding: (t: any) => `calc(${t.space[2]} + 10px) !important`,
     backgroundColor: tint(`primary`, 0.2),
-    borderBottomLeftRadius: `10px`,
-    borderBottomRightRadius: `10px`,
+    borderBottomLeftRadius: `5px`,
+    borderBottomRightRadius: `5px`,
     mb: 4,
   },
   ".prism-code": {
@@ -58,9 +58,9 @@ const code = {
     bg: `#2C3643`,
     color: `white`,
     overflow: `auto`,
-    borderBottomLeftRadius: `10px`,
-    borderBottomRightRadius: `10px`,
-    mx: [0, 0, 0, -3],
+    borderBottomLeftRadius: `5px`,
+    borderBottomRightRadius: `5px`,
+    //mx: [0, 0, 0, -3],
     mb: 3,
     ".token-line": {
       mx: -3,
@@ -182,15 +182,15 @@ const code = {
     position: `relative`,
   },
   ".code-title": {
-    borderTopLeftRadius: `10px`,
-    borderTopRightRadius: `10px`,
+    borderTopLeftRadius: `5px`,
+    borderTopRightRadius: `5px`,
     backgroundColor: tint(`primary`, 0.2),
     color: `white`,
     fontSize: 0,
     px: 3,
     py: 2,
     fontFamily: `Ubuntu Mono`,
-    mx: [0, 0, 0, -3],
+    //mx: [0, 0, 0, -3],
   },
   ".token-line": {
     pr: 3,
