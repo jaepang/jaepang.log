@@ -144,10 +144,16 @@ const BlogListItem = ({ post, showTags = true }: BlogListItemProps) => (
           height: `10%`,
           color: `sub`, 
           my: 1, 
-          fontSize: `0.75rem !important`, 
+          fontSize: `0.75rem !important`,
         }}
       >
-        <time>{post.date}</time>
+        {post.timeToRead}min to read
+        {post.tags && showTags && (
+          <React.Fragment>
+            {`  —  `}
+            <ItemTags tags={post.tags} isOnList={true} />
+          </React.Fragment>
+        )}
       </p>
     
   </Box>
