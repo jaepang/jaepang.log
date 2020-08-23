@@ -6,9 +6,9 @@ import SharePageButton from "./share-page-button"
 import ColorModeToggle from "./colormode-toggle"
 import HeaderTitle from "./header-title"
 
-type HeaderProps = {isHome?: boolean}
+type HeaderProps = {isHero?: boolean}
 
-const Header = ({isHome=false} : HeaderProps) => {
+const Header = ({isHero=false} : HeaderProps) => {
   const { navigation: nav } = useMinimalBlogConfig()
   const [colorMode, setColorMode] = useColorMode()
   let bgColor = `transparent`
@@ -17,7 +17,7 @@ const Header = ({isHome=false} : HeaderProps) => {
     e.preventDefault()
     setColorMode(isDark ? `light` : `dark`)
   }
-  if(isHome) {
+  if(isHero) {
     bgColor = `#000`
   }
   return (
@@ -48,8 +48,8 @@ const Header = ({isHome=false} : HeaderProps) => {
             justifyContent: `space-between`,
           }}
         >
-          <HeaderTitle isHome={isHome} />
-            {!isHome && (
+          <HeaderTitle isHero={isHero} />
+            {!isHero && (
               <div 
                 sx={{
                   display: `flex`
@@ -59,7 +59,7 @@ const Header = ({isHome=false} : HeaderProps) => {
                 <ColorModeToggle isDark={isDark} toggle={toggleColorMode} />
               </div>
             )}
-            {isHome && (
+            {isHero && (
               <div 
                 sx={{
                   display: `flex`

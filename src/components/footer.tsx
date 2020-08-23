@@ -2,10 +2,11 @@
 import { jsx } from "theme-ui"
 import useSiteMetadata from "../hooks/use-site-metadata"
 import SocialLinks from "./SocialLinks"
+import { tailwind } from "@theme-ui/presets"
 
-type footerProps = {isHome?: boolean}
+type footerProps = {isHero?: boolean}
 
-const Footer = ({isHome=false}: footerProps) => {
+const Footer = ({isHero=false}: footerProps) => {
   const { siteTitle } = useSiteMetadata()
 
   return (
@@ -16,8 +17,8 @@ const Footer = ({isHome=false}: footerProps) => {
         pt: [6],
         pb: 4,
         mb: `-4rem`,
-        bg: isHome ? `#fff`:null,
-        color: isHome? `rgb(134, 142, 150)`:`sub`,
+        bg: isHero ? `#fff`:null,
+        color: isHero ? `rgb(134, 142, 150)`:`sub`,
         a: {
           variant: `links.secondary`,
         },
@@ -29,7 +30,7 @@ const Footer = ({isHome=false}: footerProps) => {
       <div
         sx={{
           variant: `dividers.top`,
-          borderColor: isHome ? `rgb(134, 142, 150)`:null,
+          borderColor: isHero ? tailwind.colors.gray[4]:null,
           margin: `0 auto`,
           maxWidth: `1220px`,
           boxSizing: `border-box`,

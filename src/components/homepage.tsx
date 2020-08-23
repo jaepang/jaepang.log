@@ -48,7 +48,7 @@ const Homepage = ({ posts }: PostsProps) => {
   const fill = tailwind.colors.gray[8]
   useEffect(() => {setGridLayout(localStorage.getItem("gridLayout"))})
   return (
-    <Layout isHome={true}>
+    <Layout isHero={true}>
       <section 
         sx={{
           fontSize: 0,
