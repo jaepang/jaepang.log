@@ -133,12 +133,9 @@ const BlogListItem = ({ isTile = true, post, showTags = true }: BlogListItemProp
             textOverflow: `ellipsis`,
             overflow: `hidden`,
             display: `-webkit-box`,
-            webkitLineClamp : 2,
-            webkitBoxOrient: `vertical`,
-            minHeight: `2rem`,
-            "@media screen and (max-width: 768px)": {
-              
-            }
+            "-webkit-line-clamp" : `2`,
+            "-webkit-box-orient": `vertical`,
+            maxHeight: `4rem`,
           }}
         >
           {post.title}
@@ -152,8 +149,8 @@ const BlogListItem = ({ isTile = true, post, showTags = true }: BlogListItemProp
             overflow: `hidden`,
             textOverflow: `ellipsis`,
             display: `-webkit-box`,
-            webkitLineClamp : 2,
-            webkitBoxOrient: `vertical`
+            "-webkit-line-clamp" : `2`,
+            "-webkit-box-orient": `vertical`,
           }}
         >
             {post.description ? post.description : post.excerpt}
