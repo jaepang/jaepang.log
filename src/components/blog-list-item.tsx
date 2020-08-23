@@ -76,6 +76,10 @@ const BlogListItem = ({ isTile = true, post, showTags = true }: BlogListItemProp
           p: {
             px: `1rem`,
             pb: `1rem`,
+          },
+          img: {
+            borderBottomLeftRadius: 0,
+            borderBottomRightRadius: 0,
           }
         },
         "&:hover": {
