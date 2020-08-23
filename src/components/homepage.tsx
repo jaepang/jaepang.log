@@ -106,37 +106,54 @@ const Homepage = ({ posts }: PostsProps) => {
       <div className="gridToggle"
         sx={{
           position: `relative`,
-          maxWidth: `1220px`,
-          px: `2rem`,
-          "@media screen and (max-width: 768px)": {
-            display: `none`
-          },
+          bg: `#fff`,
+          width: `100vw`,
+          ml: `calc(-50vw + 50%)`,
         }}
       >
-        <IconWrapper
-          onClick={() => {
-            localStorage.setItem("gridLayout", 'tiles')
-            setGridLayout('tiles')
+        <div className="gridWrapper"
+          sx={{
+            maxWidth: `1210px`,
+            margin: `0 auto`,
+            pt: `2rem`,
+            display: `flex`,
+            justifyContent: `flex-end`,
+            "@media screen and (max-width: 768px)": {
+              justifyContent: `center`,
+              pt: `65px`,
+              pb: `2rem`
+            }
           }}
-          active={gridLayout==='tiles'}
-          aria-label="Set layout to tiles"
-          title="Set layout to tiles"
-          sx={{position: `absolute`, right: `40px`}}
         >
-          <Icons.Tiles fill={gridLayout==='tiles' ? `#000`:fill} />
-        </IconWrapper>
-        <IconWrapper
-          onClick={() => { 
-            localStorage.setItem("gridLayout", 'rows')
-            setGridLayout('rows')
-          }}
-          active={gridLayout==='rows'}
-          aria-label="Set layout to rows"
-          title="Set layout to rows"
-          sx={{position: `absolute`, right: `0`}}
-        >
-          <Icons.Rows fill={fill} />
-        </IconWrapper>
+          <IconWrapper
+            onClick={() => {
+              localStorage.setItem("gridLayout", 'tiles')
+              setGridLayout('tiles')
+            }}
+            active={gridLayout==='tiles'}
+            aria-label="Set layout to tiles"
+            title="Set layout to tiles"
+            sx={{
+              
+            }}
+          >
+            <Icons.Tiles fill={gridLayout==='tiles' ? `#000`:fill} />
+          </IconWrapper>
+          <IconWrapper
+            onClick={() => { 
+              localStorage.setItem("gridLayout", 'rows')
+              setGridLayout('rows')
+            }}
+            active={gridLayout==='rows'}
+            aria-label="Set layout to rows"
+            title="Set layout to rows"
+            sx={{
+              
+            }}
+          >
+            <Icons.Rows fill={fill} />
+          </IconWrapper>
+        </div>
       </div>
       <Listing gridLayout={gridLayout} title="" posts={posts} showTags={true} 
               showLink={false} link={replaceSlashes(`/${basePath}/${blogPath}`)} />
@@ -145,7 +162,6 @@ const Homepage = ({ posts }: PostsProps) => {
 }
 
 const IconWrapper = styled.button<{ active: boolean }>`
-  margin-top: 1.5rem;
   background: none;
   border: none;
   cursor: pointer;
@@ -154,6 +170,9 @@ const IconWrapper = styled.button<{ active: boolean }>`
   border-radius: 5px;
   width: 40px;
   height: 25px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   
   transition: opacity 0.3s ease;
   margin-left: 5px;
@@ -174,6 +193,9 @@ const IconWrapper = styled.button<{ active: boolean }>`
     background: rgba(255, 255, 255, 0.01);
     border-radius: 5px;
   }
+  @media screen and (max-width: 768px) {
+    margin: 0 10px 0 10px;
+  },
 `
 
 export default Homepage
