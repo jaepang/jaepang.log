@@ -4,7 +4,7 @@ import { jsx, Link as TLink } from "theme-ui"
 import { Box } from "@theme-ui/components"
 import { Link } from "gatsby"
 import ItemTags from "./item-tags"
-import { GridLayoutContext } from "./listing.context"
+import { tailwind } from "@theme-ui/presets"
 
 type BlogListItemProps = {
   post: {
@@ -39,7 +39,10 @@ const BlogListItem = ({ isTile = true, post, showTags = true }: BlogListItemProp
     borderRadius: `5px`,
     mb: `10px`,
     transition: `transform 0.3s ease-out, 
-                box-shadow 0.3s ease-out`
+                box-shadow 0.3s ease-out`,
+    "@media screen and (max-width: 768px)": {
+      display: !isTile ? `none`:null
+    }
   }
   return (
     <TLink as={Link} to={post.slug}
@@ -69,12 +72,16 @@ const BlogListItem = ({ isTile = true, post, showTags = true }: BlogListItemProp
           mt: 2 
         },
         "@media screen and (max-width: 768px)": {
-          boxShadow: `rgba(0, 0, 0, 0.2) 0px 20px 40px`,
+          display: `block`,
+          boxShadow: isTile ? `rgba(0, 0, 0, 0.2) 0px 20px 40px`:null,
+          borderBottom: !isTile ? `1px solid`:null,
+          borderColor: tailwind.colors.gray[4],
+          
           h4: {
-            px: `1rem`,
+            px: isTile ? `1rem`:null,
           },
           p: {
-            px: `1rem`,
+            px: isTile ? `1rem`:null,
             pb: `1rem`,
           },
           img: {
@@ -97,11 +104,11 @@ const BlogListItem = ({ isTile = true, post, showTags = true }: BlogListItemProp
             }
           },
           "@media screen and (max-width: 768px)": {
-            transform: `translateY(-1px)`,
-            boxShadow: `0 50px 80px -20px rgba(0, 0, 0, 0.27), 
-                        0 30px 50px -30px rgba(0, 0, 0, 0.3)`,
-            transition: `transform 0.3s ease-out, 
-                        box-shadow 0.3s ease-out`
+            transform: isTile ? `translateY(-1px)`:null,
+            boxShadow: isTile ? `0 50px 80px -20px rgba(0, 0, 0, 0.27), 
+                        0 30px 50px -30px rgba(0, 0, 0, 0.3)`:null,
+            transition: isTile ? `transform 0.3s ease-out, 
+                        box-shadow 0.3s ease-out`:null
           },
         }
       }}
@@ -128,7 +135,10 @@ const BlogListItem = ({ isTile = true, post, showTags = true }: BlogListItemProp
             display: `-webkit-box`,
             webkitLineClamp : 2,
             webkitBoxOrient: `vertical`,
-            minHeight: `2rem`
+            minHeight: `2rem`,
+            "@media screen and (max-width: 768px)": {
+              
+            }
           }}
         >
           {post.title}
