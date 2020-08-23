@@ -1,5 +1,4 @@
 /** @jsx jsx */
-import { useContext, useState, useEffect } from "react"
 import { jsx } from "theme-ui"
 import Title from "./title"
 import { Link } from "gatsby"
@@ -44,7 +43,7 @@ const Listing = ({ gridLayout, title, posts, className = ``, showTags = true, sh
         pb: [3, 4, 5],
         width: `100vw`,
         ml: `calc(-50vw + 50%)`,
-        pt: `5rem`,
+        pt: `.5rem`,
         boxSizing: `border-box`,
         backgroundColor: `#fff`,
         p: { 
@@ -55,7 +54,8 @@ const Listing = ({ gridLayout, title, posts, className = ``, showTags = true, sh
     >
       <section className="list"
         sx={{
-          margin: `0 5%`,
+          maxWidth: `1220px`,
+          margin: `0 auto`,
           display: isTile ? `grid`:`block`,
           alignContent: `stretch`,
           justifyContent: `stretch`,
