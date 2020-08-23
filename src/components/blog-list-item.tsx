@@ -58,7 +58,6 @@ const BlogListItem = ({ isTile = true, post, showTags = true }: BlogListItemProp
       sx={{
         display: isTile ? `block`:`grid`,
         gridTemplateColumns: "30% 70%",
-        //columnGap: "5%",
         margin: `1rem`,
         borderRadius: `5px`,
         backgroundColor: `header`,
@@ -122,7 +121,10 @@ const BlogListItem = ({ isTile = true, post, showTags = true }: BlogListItemProp
             mb: `0.5rem`,
             textOverflow: `ellipsis`,
             overflow: `hidden`,
-            whiteSpace: `nowrap`
+            display: `-webkit-box`,
+            webkitLineClamp : 2,
+            webkitBoxOrient: `vertical`,
+            minHeight: `2rem`
           }}
         >
           {post.title}
