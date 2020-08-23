@@ -76,11 +76,3 @@ const Header = ({isHome=false} : HeaderProps) => {
 }
 
 export default Header
-/*<div 
-            sx={{
-              display: `flex`
-            }}
-          >
-            <SharePageButton isDark={isDark}/>
-            <ColorModeToggle isDark={isDark} toggle={toggleColorMode} />
-          </div> */

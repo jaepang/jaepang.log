@@ -85,35 +85,4 @@ const IconWrapper = styled.button<{ isDark: boolean }>`
   }
 `
 
-
-/*const SharePageButton = () => (
-  <button
-    onClick={copyToClipboard}
-    type="button"
-    aria-label={`Copy URL to clipboard`}
-    title={`Copy URL to clipboard`}
-    sx={{
-      opacity: 0.65,
-      position: `relative`,
-      borderRadius: `5px`,
-      width: `40px`,
-      height: `25px`,
-      display: `flex`,
-      alignItems: `center`,
-      justifyContent: `center`,
-      transition: `opacity 0.3s ease`,
-      border: `none`,
-      outline: `none`,
-      background: `none`,
-      cursor: `pointer`,
-      padding: 0,
-      mt: `1.5rem`,
-      appearance: `none`,
-      "&:hover": { opacity: 1 },
-    }}
-  >
-    <Icons.Link fill={`#2D3748`}/>
-  </button>
-)*/
-
 export default SharePageButton
