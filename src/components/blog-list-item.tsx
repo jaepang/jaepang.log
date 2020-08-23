@@ -60,7 +60,7 @@ const BlogListItem = ({ isTile = true, post, showTags = true }: BlogListItemProp
         gridTemplateColumns: "30% 70%",
         margin: `1rem`,
         borderRadius: `5px`,
-        backgroundColor: `header`,
+        backgroundColor: `#fff`,
         h4: {
           mt: 0
         },
@@ -117,7 +117,7 @@ const BlogListItem = ({ isTile = true, post, showTags = true }: BlogListItemProp
           sx={{ 
             fontWeight: `bold`, 
             fontSize: `1.3rem`, 
-            color: `text`, 
+            color: `#000`, 
             mb: `0.5rem`,
             textOverflow: `ellipsis`,
             overflow: `hidden`,
@@ -133,7 +133,7 @@ const BlogListItem = ({ isTile = true, post, showTags = true }: BlogListItemProp
           sx={{ 
             fontSize: `0.875rem !important`, 
             mt: 1, 
-            color: `sub`, 
+            color: `rgb(134, 142, 150)`, 
             height: `2.5rem`,
             overflow: `hidden`,
             textOverflow: `ellipsis`,

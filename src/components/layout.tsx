@@ -61,7 +61,7 @@ const Layout = ({ children, className = ``, isHome = false }: LayoutProps) => (
       <Box id="skip-nav" sx={{ ...CodeStyles }} className={className}>
         {children}
       </Box>
-      <Footer />
+      <Footer isHome={isHome} />
     </Container>
   </React.Fragment>
 )

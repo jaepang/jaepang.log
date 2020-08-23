@@ -56,7 +56,6 @@ const Homepage = ({ posts }: PostsProps) => {
           backgroundColor: `#000`,
           width: `100vw`,
           ml: `calc(-50vw + 50%)`,
-          mb: `.5rem`,
           height: `82vh`,
           "@media screen and (max-width: 1300px)": {
             height: `86vh`
@@ -122,7 +121,7 @@ const Homepage = ({ posts }: PostsProps) => {
           active={gridLayout==='tiles'}
           aria-label="Set layout to tiles"
           title="Set layout to tiles"
-          sx={{position: `absolute`, right: `30px`}}
+          sx={{position: `absolute`, right: `40px`}}
         >
           <Icons.Tiles fill={gridLayout==='tiles' ? `#000`:fill} />
         </IconWrapper>
@@ -134,16 +133,13 @@ const Homepage = ({ posts }: PostsProps) => {
           active={gridLayout==='rows'}
           aria-label="Set layout to rows"
           title="Set layout to rows"
-          sx={{position: `absolute`, right: `-10px`}}
+          sx={{position: `absolute`, right: `0`}}
         >
           <Icons.Rows fill={fill} />
         </IconWrapper>
       </div>
       <Listing gridLayout={gridLayout} title="" posts={posts} showTags={true} 
               showLink={false} link={replaceSlashes(`/${basePath}/${blogPath}`)} />
-      <List>
-        <Bottom />
-      </List>
     </Layout>
   )
 }

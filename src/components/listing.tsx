@@ -41,23 +41,21 @@ const Listing = ({ gridLayout, title, posts, className = ``, showTags = true, sh
   return(
     <div
       sx={{
-        mb: [3, 4, 5],
+        pb: [3, 4, 5],
+        width: `100vw`,
+        ml: `calc(-50vw + 50%)`,
+        pt: `5rem`,
         boxSizing: `border-box`,
+        backgroundColor: `#fff`,
         p: { 
           fontSize: [1, 2, 3], 
           mt: 2 
         }
       }}
     >
-      <Title text={title} sx={{mt: `2em`}}>
-      {showLink && (
-        <Link to={link}>Read all posts</Link>
-      )}
-      </Title>
-      
       <section className="list"
         sx={{
-          margin: `-1rem`,
+          margin: `0 5%`,
           display: isTile ? `grid`:`block`,
           alignContent: `stretch`,
           justifyContent: `stretch`,
