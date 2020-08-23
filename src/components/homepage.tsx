@@ -109,6 +109,9 @@ const Homepage = ({ posts }: PostsProps) => {
           position: `relative`,
           maxWidth: `1220px`,
           px: `2rem`,
+          "@media screen and (max-width: 768px)": {
+            display: `none`
+          },
         }}
       >
         <IconWrapper
