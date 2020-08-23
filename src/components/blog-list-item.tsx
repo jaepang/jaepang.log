@@ -35,7 +35,7 @@ const BlogListItem = ({ isTile = true, post, showTags = true }: BlogListItemProp
     objectFit: `cover`,
     objectPosition: `center center`,
     width: `100%`,
-    height: !isTile?`100%`:`300px`,
+    height: !isTile ?`100%`:`300px`,
     borderRadius: `5px`,
     mb: `10px`,
     transition: `transform 0.3s ease-out, 
@@ -58,7 +58,7 @@ const BlogListItem = ({ isTile = true, post, showTags = true }: BlogListItemProp
       sx={{
         display: isTile ? `block`:`grid`,
         gridTemplateColumns: "30% 70%",
-        columnGap: "5%",
+        //columnGap: "5%",
         margin: `1rem`,
         borderRadius: `5px`,
         backgroundColor: `header`,
@@ -113,7 +113,7 @@ const BlogListItem = ({ isTile = true, post, showTags = true }: BlogListItemProp
           sx={imageStyle}
         />
       )}
-      <div>
+      <div sx={{pl: !isTile ? '5%':0}}>
         <h4 
           sx={{ 
             fontWeight: `bold`, 
