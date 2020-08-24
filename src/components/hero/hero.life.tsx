@@ -42,12 +42,12 @@ const LifeHero = ({ posts, pageContext }: HeroProps) => {
   const fill = tailwind.colors.gray[8]
   useEffect(() => {setGridLayout(localStorage.getItem("gridLayout"))})
   return (
-    <Layout isHero={true}>
+    <Layout isHero={true} isLife={true}>
       <section 
         sx={{
           fontSize: 0,
           color: `#fff`,
-          backgroundColor: `#000`,
+          backgroundColor: `#FAFAFA`,
           width: `100vw`,
           ml: `calc(-50vw + 50%)`,
           height: `82vh`,
@@ -55,7 +55,7 @@ const LifeHero = ({ posts, pageContext }: HeroProps) => {
             height: `86vh`
           },
           h2: {
-            color: `#fff !important`,
+            color: `#000 !important`,
             fontFamily: `Pacifico`,
             fontSize: [5, 6, 7],
             mb: [2, 3, 4]

@@ -6,9 +6,9 @@ import SharePageButton from "./share-page-button"
 import ColorModeToggle from "./colormode-toggle"
 import HeaderTitle from "./header-title"
 
-type HeaderProps = {isHero?: boolean}
+type HeaderProps = {isHero?: boolean, isLife?: boolean}
 
-const Header = ({isHero=false} : HeaderProps) => {
+const Header = ({isHero=false, isLife=false} : HeaderProps) => {
   const { navigation: nav } = useMinimalBlogConfig()
   const [colorMode, setColorMode] = useColorMode()
   let bgColor = `transparent`
@@ -19,6 +19,9 @@ const Header = ({isHero=false} : HeaderProps) => {
   }
   if(isHero) {
     bgColor = `#000`
+    if(isLife) {
+      bgColor = `#FAFAFA`
+    }
   }
   return (
     <header 
@@ -48,7 +51,7 @@ const Header = ({isHero=false} : HeaderProps) => {
             justifyContent: `space-between`,
           }}
         >
-          <HeaderTitle isHero={isHero} />
+          <HeaderTitle isHero={isHero} isLife={isLife} />
             {!isHero && (
               <div 
                 sx={{

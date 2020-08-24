@@ -9,9 +9,9 @@ import Footer from "./footer"
 import CodeStyles from "../styles/code"
 import SkipNavLink from "./skip-nav"
 
-type LayoutProps = { children: React.ReactNode; className?: string; isHero?: boolean }
+type LayoutProps = { children: React.ReactNode; className?: string; isHero?: boolean, isLife?: boolean }
 
-const Layout = ({ children, className = ``, isHero = false }: LayoutProps) => (
+const Layout = ({ children, className = ``, isHero=false, isLife=false }: LayoutProps) => (
   <React.Fragment>
     <Global
       styles={(theme) => ({
@@ -57,7 +57,7 @@ const Layout = ({ children, className = ``, isHero = false }: LayoutProps) => (
     <SEO />
     <SkipNavLink>Skip to content</SkipNavLink>
     <Container>
-      <Header isHero={isHero} />
+      <Header isHero={isHero} isLife={isLife} />
       <Box id="skip-nav" sx={{ ...CodeStyles }} className={className}>
         {children}
       </Box>
