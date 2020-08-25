@@ -91,7 +91,7 @@ const Homepage = ({ posts }: PostsProps) => {
         >
           <Hero/>
         </div>
-        <img src="https://github.com/jaepang/logo/blob/master/logo-white-transpatent.png?raw=true')"
+        <img src="/homeHero.png"
           sx={{
             display: `inline-block`,
             width: `50%`,
