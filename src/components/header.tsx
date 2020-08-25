@@ -1,14 +1,16 @@
 /** @jsx jsx */
 import { jsx, useColorMode } from "theme-ui"
+import { Link } from "gatsby"
 import { Flex } from "@theme-ui/components"
 import useMinimalBlogConfig from "../hooks/use-minimal-blog-config"
 import SharePageButton from "./share-page-button"
 import ColorModeToggle from "./colormode-toggle"
 import HeaderTitle from "./header-title"
+import { tailwind } from "@theme-ui/presets"
 
-type HeaderProps = {isHero?: boolean, isLife?: boolean}
+type HeaderProps = {isHero?: boolean, isLife?: boolean, className?: string}
 
-const Header = ({isHero=false, isLife=false} : HeaderProps) => {
+const Header = ({isHero=false, isLife=false, className} : HeaderProps) => {
   const { navigation: nav } = useMinimalBlogConfig()
   const [colorMode, setColorMode] = useColorMode()
   let bgColor = `transparent`
@@ -24,7 +26,7 @@ const Header = ({isHero=false, isLife=false} : HeaderProps) => {
     }
   }
   return (
-    <header 
+    <header className={className}
       sx={{
         pt: `8vh`, 
         "@media screen and (max-width: 1300px)": {
@@ -42,7 +44,7 @@ const Header = ({isHero=false, isLife=false} : HeaderProps) => {
           maxWidth: `1220px`,
           margin: `auto`,
           alignItems: `center`, 
-          justifyContent: `space-between`,
+          justifyContent: `flex-start`,
         }}
       >
         <Flex 
@@ -65,10 +67,39 @@ const Header = ({isHero=false, isLife=false} : HeaderProps) => {
             {isHero && (
               <div 
                 sx={{
-                  display: `flex`
+                  "@media screen and (max-width: 1300px)": {
+                    pr: 0,
+                    "@media screen and (max-width: 800px)": {
+                      display: `none`
+                    }
+                  },
+                  pr: `5%`,
+                  display: `flex`,
+                  width: `25%`,
+                  justifyContent: `space-around`,
+                  p: {
+                    fontSize: `16px`,
+                    fontWeight: `normal`,
+                    my: 0,
+                    pt: `0.5rem`,
+                    color: isLife ? tailwind.colors.gray[8]:tailwind.colors.gray[4],
+                    transition: `color 0.3s ease`,
+                    "&:hover": {
+                      color: isLife ? `#000`: `#fff`,
+                      transition: `color 0.3s ease`,
+                    }
+                  },
                 }}
               >
-                
+                <Link to="/about">
+                  <p id="nav-about">About</p>
+                </Link>
+                <Link to="/tags/dev">
+                  <p id="nav-dev">Dev</p>
+                </Link>
+                <Link to="/tags/life">
+                  <p id="nav-life">Life</p>
+                </Link>
               </div>
             )}
         </Flex>

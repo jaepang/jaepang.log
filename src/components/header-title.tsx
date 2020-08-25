@@ -31,7 +31,7 @@ const HeaderTitle = ({isHero=false, isLife=false}: HeaderTitleProps) => {
         } 
       }}
     >
-      <h1 sx={{ my: 0, fontWeight: `medium`, fontSize: [3, 4] }}>{siteTitle}</h1>
+      <h1 sx={{ my: 0, fontWeight: `medium`, fontSize: 3 }}>{siteTitle}</h1>
     </Link>
   )
 }

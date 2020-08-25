@@ -38,11 +38,11 @@ const DevHero = ({ posts, pageContext }: HeroProps) => {
     localStorage.setItem("gridLayout", 'tiles')
     flag = false
   }
-  
+
   const fill = tailwind.colors.gray[8]
   useEffect(() => {setGridLayout(localStorage.getItem("gridLayout"))})
   return (
-    <Layout isHero={true}>
+    <Layout isHero={true} className="DevHero">
       <section 
         sx={{
           fontSize: 0,
@@ -85,7 +85,7 @@ const DevHero = ({ posts, pageContext }: HeroProps) => {
             },
           }}
         >
-          <h2>Developer.log</h2>
+          <h2>Develop.log</h2>
           <p>개발자의 로그를 기록하는 장소입니다아아아아</p>
         </div>
         <img src="/devHero.png"

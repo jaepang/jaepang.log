@@ -51,13 +51,19 @@ const Layout = ({ children, className = ``, isHero=false, isLife=false }: Layout
         ".utterances": {
           marginTop: `2rem`,
           maxWidth: `100% !important`
-        }
+        },
+        ".DevHero #nav-dev": {
+          color: `#fff`
+        },
+        ".DevLife #nav-life": {
+          color: `#000`
+        },
       })}
     />
     <SEO />
     <SkipNavLink>Skip to content</SkipNavLink>
     <Container>
-      <Header isHero={isHero} isLife={isLife} />
+      <Header isHero={isHero} isLife={isLife} className={className} />
       <Box id="skip-nav" sx={{ ...CodeStyles }} className={className}>
         {children}
       </Box>
