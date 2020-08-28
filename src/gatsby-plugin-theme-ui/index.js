@@ -57,6 +57,11 @@ const theme = merge(tailwind, {
       lineHeight: `body`,
       "--baseline-multiplier": 0.179,
       "--x-height-multiplier": 0.35,
+      maxWidth: `680px`,
+      margin: `0 auto`,
+      "&.gatsby-resp-image-background-image": {
+        maxWidth: `1220px`
+      }
     },
     ul: {
       li: {
@@ -65,6 +70,8 @@ const theme = merge(tailwind, {
         lineHeight: `body`,
         "--baseline-multiplier": 0.179,
         "--x-height-multiplier": 0.35,
+        maxWidth: `680px`,
+        margin: `0 auto`
       },
     },
     ol: {
@@ -74,6 +81,8 @@ const theme = merge(tailwind, {
         lineHeight: `body`,
         "--baseline-multiplier": 0.179,
         "--x-height-multiplier": 0.35,
+        maxWidth: `680px`,
+        margin: `0 auto`
       },
     },
     h1: {
@@ -81,40 +90,52 @@ const theme = merge(tailwind, {
       fontFamily: `Pacifico, cursive`,
       fontSize: [5, 6, 7],
       mt: 4,
+      maxWidth: `680px`,
+      margin: `0 auto`
     },
     h2: {
       variant: `text.heading`,
       fontSize: [3, 4, 5],
       mt: 4,
+      maxWidth: `680px`,
+      margin: `0 auto`
     },
     h3: {
       variant: `text.heading`,
       fontSize: [2, 3, 4],
       mt: 4,
+      maxWidth: `680px`,
+      margin: `0 auto`
     },
     h4: {
       variant: `text.heading`,
       fontSize: [1, 2, 3],
       mt: 3,
+      maxWidth: `680px`,
+      margin: `0 auto`
     },
     h5: {
       variant: `text.heading`,
       fontSize: [0.5, 1, 2],
       mt: 3,
+      maxWidth: `680px`,
+      margin: `0 auto`
     },
     h6: {
       variant: `text.heading`,
       fontSize: 1,
       mb: 2,
+      maxWidth: `680px`,
+      margin: `0 auto`
     },
     blockquote: {
       color: tailwind.colors.gray[6],
-      mx: 0,
+      mx: `auto`,
       mt: -3,
       mb: `1.75rem`,
+      maxWidth: `680px`,
       p: {
         fontStyle: `italic`,
-        //fontFamily: `Gelasio, serif`,
         padding: `0 2.5%`,
       },
       "&::before": {
@@ -122,8 +143,8 @@ const theme = merge(tailwind, {
         fontSize: `6rem`,
         fontFamily: 'Arizonia, serif',
         display: `block`,
-        mt: `-2.5rem`,
-        mb: [`-6.5rem`, `-7rem`],
+        mt: `1rem`,
+        mb: `-5.5rem`,
       }
     },
     table: {
@@ -131,6 +152,8 @@ const theme = merge(tailwind, {
       my: 4,
       borderCollapse: `separate`,
       borderSpacing: 0,
+      maxWidth: `680px`,
+      margin: `0 auto`,
       [[`th`, `td`]]: {
         textAlign: `left`,
         py: `4px`,
@@ -154,7 +177,9 @@ const theme = merge(tailwind, {
       border: `none`,
       backgroundColor: `background`,
       height: `2em`,
-      margin: `2.5rem auto 4rem`,
+      //margin: `2.5rem auto 4rem`,
+      maxWidth: `680px`,
+      margin: `0 auto`,
       "&::before": {
         content: `'//////////////////////////////////////////////////////////////////////////////////////////////////////////////'`,
         overflowX: `hidden`,
@@ -168,9 +193,6 @@ const theme = merge(tailwind, {
   },
   layout: {
     container: {
-      //paddingBottom: `3%`,
-      //paddingLeft: [`5%`, `10%`],
-      //paddingRight: [`5%`, `10%`],
       maxWidth:`1220px`,
     },
   },

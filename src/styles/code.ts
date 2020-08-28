@@ -10,6 +10,8 @@ const code = {
     fontSize:  [`0.75rem`, `1rem`],
     borderTopLeftRadius: `5px`,
     borderTopRightRadius: `5px`,
+    maxWidth: `725px`,
+    margin: `0 auto`,
     "textarea, pre": {
       padding: (t: any) => `${t.space[3]} !important`,
     },
@@ -20,6 +22,8 @@ const code = {
     borderBottomLeftRadius: `5px`,
     borderBottomRightRadius: `5px`,
     mb: 4,
+    maxWidth: `725px`,
+    margin: `0 auto`,
   },
   ".prism-code": {
     fontFamily: `Ubuntu Mono`,
@@ -30,6 +34,8 @@ const code = {
     overflow: `initial`,
     float: `left`,
     minWidth: `100%`,
+    maxWidth: `700px`,
+    margin: `0 auto`,
     mb: 0,
     '&[data-linenumber="false"]': {
       ".token-line": {
@@ -60,6 +66,8 @@ const code = {
     overflow: `auto`,
     borderBottomLeftRadius: `5px`,
     borderBottomRightRadius: `5px`,
+    maxWidth: `725px`,
+    margin: `0 auto`,
     //mx: [0, 0, 0, -3],
     mb: 3,
     ".token-line": {
@@ -190,6 +198,8 @@ const code = {
     px: 3,
     py: 2,
     fontFamily: `Ubuntu Mono`,
+    maxWidth: `725px`,
+    margin: `0 auto`,
     //mx: [0, 0, 0, -3],
   },
   ".token-line": {
