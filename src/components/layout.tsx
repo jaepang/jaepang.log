@@ -48,6 +48,21 @@ const Layout = ({ children, className = ``, isHero=false, isLife=false }: Layout
             textDecoration: `none !important`,
           },
         },
+        ".anchor-header": {
+          position: `absolute`,
+          top: 0,
+          left: 0,
+          transform: `translateX(-100%)`,
+          paddingRight: `4px`,
+          svg: {
+            opacity: 0,
+            transition: `0.1s ease`,
+            "&:hover": {
+              opacity: 1,
+              transition: `0.1s ease`,
+            }
+          }
+        },
         ".utterances": {
           marginTop: `2rem`,
           maxWidth: `100% !important`
