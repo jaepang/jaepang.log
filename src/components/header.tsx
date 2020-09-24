@@ -215,22 +215,3 @@ const Header = ({isHero=false, isLife=false, className} : HeaderProps) => {
 }
 
 export default Header
-/*
-<ul>
-  <li>
-    <Link to="/about">
-      <p id="nav-about">About</p>
-    </Link>
-  </li>
-  <li>
-    <Link to="/tags/dev">
-      <p id="nav-dev">Dev</p>
-    </Link>
-  </li>
-  <li>
-    <Link to="/tags/life">
-      <p id="nav-life">Life</p>
-    </Link>
-  </li>
-</ul>
- */
