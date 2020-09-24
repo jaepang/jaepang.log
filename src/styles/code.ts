@@ -11,7 +11,7 @@ const code = {
     borderTopLeftRadius: `5px`,
     borderTopRightRadius: `5px`,
     maxWidth: `725px`,
-    margin: `0 auto`,
+    margin: `0.5rem auto`,
     "textarea, pre": {
       padding: (t: any) => `${t.space[3]} !important`,
     },
@@ -35,7 +35,7 @@ const code = {
     float: `left`,
     minWidth: `100%`,
     maxWidth: `700px`,
-    margin: `0 auto`,
+    margin: `0.5rem auto`,
     mb: 0,
     '&[data-linenumber="false"]': {
       ".token-line": {
@@ -67,7 +67,7 @@ const code = {
     borderBottomLeftRadius: `5px`,
     borderBottomRightRadius: `5px`,
     maxWidth: `725px`,
-    margin: `0 auto`,
+    margin: `0.5rem auto`,
     //mx: [0, 0, 0, -3],
     mb: 3,
     ".token-line": {
