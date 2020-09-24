@@ -37,6 +37,7 @@ const Header = ({isHero=false, isLife=false, className} : HeaderProps) => {
         marginLeft: `calc(-50vw + 50%)`,
         backgroundColor: bgColor,
         px: `2.7rem`,
+        position: `relative`
       }}
     >
       <div
@@ -65,41 +66,145 @@ const Header = ({isHero=false, isLife=false, className} : HeaderProps) => {
               </div>
             )}
             {isHero && (
-              <div 
+              <div
                 sx={{
-                  "@media screen and (max-width: 1300px)": {
-                    pr: 0,
-                    "@media screen and (max-width: 800px)": {
-                      display: `none`
-                    }
-                  },
-                  pr: `5%`,
-                  display: `flex`,
-                  width: `25%`,
-                  justifyContent: `space-around`,
-                  p: {
-                    fontSize: `16px`,
-                    fontWeight: `normal`,
-                    my: 0,
-                    pt: `0.5rem`,
-                    color: isLife ? tailwind.colors.gray[8]:tailwind.colors.gray[4],
-                    transition: `color 0.3s ease`,
-                    "&:hover": {
-                      color: isLife ? `#000`: `#fff`,
-                      transition: `color 0.3s ease`,
-                    }
-                  },
+                  width: `25%`
                 }}
               >
-                <Link to="/about">
-                  <p id="nav-about">About</p>
-                </Link>
-                <Link to="/tags/dev">
-                  <p id="nav-dev">Dev</p>
-                </Link>
-                <Link to="/tags/life">
-                  <p id="nav-life">Life</p>
-                </Link>
+                <div 
+                  sx={{
+                    "@media screen and (max-width: 1300px)": {
+                      pr: 0,
+                      "@media screen and (max-width: 800px)": {
+                        display: `none`
+                      }
+                    },
+                    pr: `5%`,
+                    display: `flex`,
+                    width: `100%`,
+                    justifyContent: `space-around`,
+                    p: {
+                      fontSize: `16px`,
+                      fontWeight: `normal`,
+                      my: 0,
+                      pt: `0.5rem`,
+                      color: isLife ? tailwind.colors.gray[8]:tailwind.colors.gray[4],
+                      transition: `color 0.3s ease`,
+                      "&:hover": {
+                        color: isLife ? `#000`: `#fff`,
+                        transition: `color 0.3s ease`,
+                      }
+                    },
+                  }}
+                >
+                  <Link to="/about">
+                    <p className="nav-about">About</p>
+                  </Link>
+                  <Link to="/tags/dev">
+                    <p className="nav-dev">Dev</p>
+                  </Link>
+                  <Link to="/tags/life">
+                    <p className="nav-life">Life</p>
+                  </Link>
+                </div>
+                <div
+                  sx={{
+                    display: `none`,
+                    "@media screen and (max-width: 800px)": {
+                      display: `block`
+                    },
+                    p: {
+                      fontSize: `16px`,
+                      fontWeight: `normal`,
+                      my: 0,
+                      pt: `0.5rem`,
+                      color: isLife ? tailwind.colors.gray[8]:tailwind.colors.gray[4],
+                      transition: `color 0.3s ease`,
+                      "&:hover": {
+                        color: isLife ? `#000`: `#fff`,
+                        transition: `color 0.3s ease`,
+                      }
+                    },
+                  }}
+                >
+                  <input type="checkbox" id="mobile-nav" 
+                    sx={{
+                      display:`none`,
+                      "&:checked": {
+                        body: {
+                          overflow: `hidden`
+                        }
+                      },
+                      "&:checked + label": {
+                        "span:nth-child(2)": {
+                          width: `100%`
+                        }
+                      },
+                      "&:checked + label + div": {
+                        height: `40vh`,
+                        borderBottom: `0.5px solid`,
+                        borderColor: isLife ? tailwind.colors.gray[4]:tailwind.colors.gray[8],
+                      }
+                    }}
+                  />
+                  
+                  <label htmlFor="mobile-nav"
+                    sx={{
+                      cursor: `pointer`,
+                      display: `block`,
+                      position: `relative`,
+                      width: `20px`,
+                      height: `40px`,
+                      float: `right`,
+                      span: {
+                        display: `block`,
+                        position: `absolute`,
+                        height: `1px`,
+                        borderRadius: `30px`,
+                        background: isLife ? `#000`: `#fff`,
+                        transition: `all .35s`
+                      }
+                    }}
+                  >
+                    <span sx={{top: `50%`, width: `100%`,}}/>
+                    <span sx={{top: `65%`, right: `0`, width: `70%`,}}/>
+                  </label>
+                  <div
+                    sx={{
+                      mt: `10vh`,
+                      width: `100%`,
+                      height:`0px`,
+                      background: bgColor,
+                      position: `absolute`,
+                      top: `76px`,
+                      left: `0`,
+                      zIndex: `1`,
+                      transition: `all .35s`,
+                      overflow: `hidden`,
+                      textAlign: `center`,
+                      h4: {
+                        color: isLife ? tailwind.colors.gray[8]:tailwind.colors.gray[4],
+                        fontWeight: `normal`,
+                        fontSize: `22px`,
+                        transition: `color 0.3s ease`,
+                        "&:hover": {
+                          color: isLife ? `#000`: `#fff`,
+                          transition: `color 0.3s ease`,
+                        }
+                      }
+                    }}
+                  >
+                    <Link to="/about">
+                      <h4>About</h4>
+                    </Link>
+                    <Link to="/tags/dev">
+                      <h4 className="nav-dev">Dev</h4>
+                    </Link>
+                    <Link to="/tags/life">
+                      <h4 className="nav-life">Life</h4>
+                    </Link>
+                  </div>
+                </div>
               </div>
             )}
         </Flex>
@@ -110,3 +215,22 @@ const Header = ({isHero=false, isLife=false, className} : HeaderProps) => {
 }
 
 export default Header
+/*
+<ul>
+  <li>
+    <Link to="/about">
+      <p id="nav-about">About</p>
+    </Link>
+  </li>
+  <li>
+    <Link to="/tags/dev">
+      <p id="nav-dev">Dev</p>
+    </Link>
+  </li>
+  <li>
+    <Link to="/tags/life">
+      <p id="nav-life">Life</p>
+    </Link>
+  </li>
+</ul>
+ */

@@ -67,10 +67,10 @@ const Layout = ({ children, className = ``, isHero=false, isLife=false }: Layout
           marginTop: `2rem`,
           maxWidth: `100% !important`
         },
-        ".DevHero #nav-dev": {
+        ".DevHero .nav-dev": {
           color: `#fff`
         },
-        ".DevLife #nav-life": {
+        ".DevLife .nav-life": {
           color: `#000`
         },
       })}
