@@ -55,7 +55,10 @@ const heroStyle = {
     h2: {
       fontSize: `44px`,
       mb: `1.5rem`
-    }
+    },
+    "@media screen and (max-width: 1060px)": {
+      pr: 0
+    },
   }
 }
 const imageStyle = {
@@ -69,6 +72,9 @@ const imageStyle = {
   overFlow: `hidden`,
   objectFit: `cover`,
   objectPosition: `center center`,
+  "@media screen and (max-width: 1060px)": {
+    display: `none`
+  }
 }
 
 const Post = ({ data: { post } }: PostProps) => (
