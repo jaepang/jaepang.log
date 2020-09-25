@@ -55,10 +55,15 @@ const Homepage = ({ posts }: PostsProps) => {
           backgroundColor: `#000`,
           width: `100vw`,
           ml: `calc(-50vw + 50%)`,
-          height: `82vh`,
-          "@media screen and (max-width: 1300px)": {
-            height: `86vh`
-          },
+          position: `absolute`,
+          top: 0,
+          left: 0,
+          zIndex: `1`,
+          display: `flex`,
+          flexDirection: `column`,
+          justifyContent: `center`,
+          px: `2.7rem`,
+          height: `100vh`,
           h2: {
             color: `#fff !important`,
             fontSize: [5, 6, 7],
@@ -73,27 +78,20 @@ const Homepage = ({ posts }: PostsProps) => {
       >
         <div className="hero-wrapper" 
           sx={{
+            position: `relative`,
             maxWidth: `1220px`,
-            margin: `0 auto`
+            margin: `0 auto`,
+            pr: `35%`
           }}
         >
-        <div className="hero"
-          sx={{
-            display: `inline-block`,
-            verticalAlign: `top`,
-            pt: `20vh`,
-            px: `2rem`,
-            "@media screen and (min-width: 1301px)": {
-              px: 0,
-              width: `50%`,
-            },
-          }}
-        >
-          <Hero/>
-        </div>
+        <Hero/>
         <img src="/homeHero.png"
           sx={{
             display: `inline-block`,
+            position: `absolute`,
+            top: 0,
+            right: 0,
+            transform: `translateY(-25%)`,
             width: `50%`,
             "@media screen and (max-width: 1300px)": {
               display: `none`
@@ -102,60 +100,68 @@ const Homepage = ({ posts }: PostsProps) => {
         />
         </div>
       </section>
-      <div className="gridToggle"
+      <section
         sx={{
-          position: `relative`,
-          bg: `#fff`,
-          width: `100vw`,
-          ml: `calc(-50vw + 50%)`,
+          position: `absolute`,
+          top: `100vh`,
+          left: 0
         }}
       >
-        <div className="gridWrapper"
+        <div className="gridToggle"
           sx={{
-            maxWidth: `1210px`,
-            margin: `0 auto`,
-            pt: `2rem`,
-            display: `flex`,
-            justifyContent: `flex-end`,
-            "@media screen and (max-width: 768px)": {
-              justifyContent: `center`,
-              pt: `65px`,
-              pb: `2rem`
-            }
+            position: `relative`,
+            bg: `#fff`,
+            width: `100vw`,
+            ml: `calc(-50vw + 50%)`,
           }}
         >
-          <IconWrapper
-            onClick={() => {
-              localStorage.setItem("gridLayout", 'tiles')
-              setGridLayout('tiles')
-            }}
-            active={gridLayout==='tiles'}
-            aria-label="Set layout to tiles"
-            title="Set layout to tiles"
+          <div className="gridWrapper"
             sx={{
-              
+              maxWidth: `1210px`,
+              margin: `0 auto`,
+              pt: `2rem`,
+              display: `flex`,
+              justifyContent: `flex-end`,
+              "@media screen and (max-width: 768px)": {
+                justifyContent: `center`,
+                pt: `65px`,
+                pb: `2rem`
+              }
             }}
           >
-            <Icons.Tiles fill={gridLayout==='tiles' ? `#000`:fill} />
-          </IconWrapper>
-          <IconWrapper
-            onClick={() => { 
-              localStorage.setItem("gridLayout", 'rows')
-              setGridLayout('rows')
-            }}
-            active={gridLayout==='rows'}
-            aria-label="Set layout to rows"
-            title="Set layout to rows"
-            sx={{
-              
-            }}
-          >
-            <Icons.Rows fill={fill} />
-          </IconWrapper>
+            <IconWrapper
+              onClick={() => {
+                localStorage.setItem("gridLayout", 'tiles')
+                setGridLayout('tiles')
+              }}
+              active={gridLayout==='tiles'}
+              aria-label="Set layout to tiles"
+              title="Set layout to tiles"
+              sx={{
+                
+              }}
+            >
+              <Icons.Tiles fill={gridLayout==='tiles' ? `#000`:fill} />
+            </IconWrapper>
+            <IconWrapper
+              onClick={() => { 
+                localStorage.setItem("gridLayout", 'rows')
+                setGridLayout('rows')
+              }}
+              active={gridLayout==='rows'}
+              aria-label="Set layout to rows"
+              title="Set layout to rows"
+              sx={{
+                
+              }}
+            >
+              <Icons.Rows fill={fill} />
+            </IconWrapper>
+          </div>
         </div>
-      </div>
-      <Listing gridLayout={gridLayout} title="" posts={posts} showTags={true} 
-              showLink={false} link={replaceSlashes(`/${basePath}/${blogPath}`)} />
+        <Listing gridLayout={gridLayout} title="" posts={posts} showTags={true} 
+                showLink={false} link={replaceSlashes(`/${basePath}/${blogPath}`)} />
+      </section>
     </Layout>
   )
 }
