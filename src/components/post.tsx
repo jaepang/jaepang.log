@@ -78,14 +78,13 @@ const imageStyle = {
 }
 
 const Post = ({ data: { post } }: PostProps) => (
-  <Layout isPost={true} sx={{px: [0, `1rem`, `2rem`, `3rem`]}}>
+  <Layout sx={{px: [0, `1rem`, `2rem`, `3rem`]}}>
     <SEO
       title={post.title}
       description={post.description ? post.description : post.excerpt}
       image={post.banner ? post.banner.childImageSharp.resize.src : undefined}
       pathname={post.slug}
     />
-    <PostHeader/>
     <div className="post-hero" sx={heroStyle}>
       <div className="post-hero-content">
         <Heading className="post-title" variant="styles.header">{post.title}</Heading>

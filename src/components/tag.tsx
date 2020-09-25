@@ -7,8 +7,7 @@ import useMinimalBlogConfig from "../hooks/use-minimal-blog-config"
 import Listing from "./listing"
 import replaceSlashes from "../utils/replaceSlashes"
 import SEO from "./seo"
-import DevHero from "./hero/hero.dev"
-import LifeHero from "./hero/hero.life"
+import Hero from "./hero"
 
 type TagProps = {
   posts: {
@@ -37,14 +36,7 @@ const Tag = ({ posts, pageContext }: TagProps) => {
   const isLife = pageContext.slug === 'life'
   const isHero = isDev || isLife
   if(isHero) {
-    if(isDev) {
-      return (
-        <DevHero posts={posts} pageContext={pageContext}/>
-      )
-    }
-    return (
-      <LifeHero posts={posts} pageContext={pageContext}/>
-    )
+    return (<Hero posts={posts} pageContext={pageContext}/>)
   }
   return (
     <Layout>
