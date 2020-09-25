@@ -11,17 +11,11 @@ type HeaderProps = {isHero?: boolean, isLife?: boolean, className?: string}
 const Header = ({isHero=false, isLife=false, className} : HeaderProps) => {
   const { navigation: nav } = useMinimalBlogConfig()
   const [colorMode, setColorMode] = useColorMode()
-  let bgColor = `transparent`
+  const bgColor = isLife || !isHero ? `#FAFAFA`:`#000`
   const isDark = colorMode === `dark`
   const toggleColorMode = (e: any) => {
     e.preventDefault()
     setColorMode(isDark ? `light` : `dark`)
-  }
-  if(isHero) {
-    bgColor = `#000`
-    if(isLife) {
-      bgColor = `#FAFAFA`
-    }
   }
   return (
     <header className={className}
@@ -180,8 +174,8 @@ const Header = ({isHero=false, isLife=false, className} : HeaderProps) => {
                     }
                   }}
                 >
-                  <Link to="/about">
-                    <h4>About</h4>
+                  <Link to="/tags">
+                    <h4>Tags</h4>
                   </Link>
                   <Link to="/tags/dev">
                     <h4 className="nav-dev">Dev</h4>

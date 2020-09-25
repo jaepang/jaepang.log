@@ -50,13 +50,13 @@ const heroStyle = {
     position: `relative`,
     margin: `0 auto`,
     maxWidth: `1220px`,
-    pr: `35%`,
+    pr: `40%`,
     zIndex: `1`,
     h2: {
       fontSize: `44px`,
       mb: `1.5rem`
     },
-    "@media screen and (max-width: 1060px)": {
+    "@media screen and (max-width: 1400px)": {
       pr: 0
     },
   }
@@ -72,13 +72,13 @@ const imageStyle = {
   overFlow: `hidden`,
   objectFit: `cover`,
   objectPosition: `center center`,
-  "@media screen and (max-width: 1060px)": {
+  "@media screen and (max-width: 1400px)": {
     display: `none`
-  }
+  },
 }
 
 const Post = ({ data: { post } }: PostProps) => (
-  <Layout sx={{px: [0, `1rem`, `2rem`, `3rem`]}}>
+  <Layout>
     <SEO
       title={post.title}
       description={post.description ? post.description : post.excerpt}
