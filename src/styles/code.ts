@@ -200,6 +200,8 @@ const code = {
     fontFamily: `Ubuntu Mono`,
     maxWidth: `725px`,
     margin: `0 auto`,
+    mt: `0.5rem`,
+    mb: `-0.5rem`
     //mx: [0, 0, 0, -3],
   },
   ".token-line": {
