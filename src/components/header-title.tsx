@@ -5,18 +5,12 @@ import replaceSlashes from "../utils/replaceSlashes"
 import useSiteMetadata from "../hooks/use-site-metadata"
 import useMinimalBlogConfig from "../hooks/use-minimal-blog-config"
 
-type HeaderTitleProps = {isHero?: boolean, isLife?: boolean}
+type HeaderTitleProps = {color?: string}
 
-const HeaderTitle = ({isHero=false, isLife=false}: HeaderTitleProps) => {
+const HeaderTitle = ({color=``}: HeaderTitleProps) => {
   const { siteTitle } = useSiteMetadata()
   const { basePath } = useMinimalBlogConfig()
-  let hdColor = `heading`
-  if(isHero) {
-    hdColor = `#fff`
-    if(isLife) {
-      hdColor = `#000`
-    }
-  }
+  let hdColor = color
 
   return (
     <Link

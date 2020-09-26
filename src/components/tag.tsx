@@ -39,7 +39,7 @@ const Tag = ({ posts, pageContext }: TagProps) => {
     return (<Hero posts={posts} pageContext={pageContext}/>)
   }
   return (
-    <Layout>
+    <Layout bgColor={`#fff`}>
       <SEO title={`Tag: ${pageContext.name}`} />
       <Flex sx={{ alignItems: `center`, justifyContent: `space-between`, flexFlow: `wrap` }}>
         <Heading sx={{fontFamily: `Pacifico`}} variant="styles.h2"># {pageContext.name}</Heading>

@@ -6,12 +6,11 @@ import useMinimalBlogConfig from "../hooks/use-minimal-blog-config"
 import HeaderTitle from "./header-title"
 import { tailwind } from "@theme-ui/presets"
 
-type HeaderProps = {isHero?: boolean, isLife?: boolean, className?: string}
+type HeaderProps = {isHero?: boolean, bgColor?: string, className?: string}
 
-const Header = ({isHero=false, isLife=false, className} : HeaderProps) => {
+const Header = ({isHero=false, bgColor=`transparent`, className} : HeaderProps) => {
   const { navigation: nav } = useMinimalBlogConfig()
   const [colorMode, setColorMode] = useColorMode()
-  const bgColor = isLife || !isHero ? `#FAFAFA`:`#000`
   const isDark = colorMode === `dark`
   const toggleColorMode = (e: any) => {
     e.preventDefault()
@@ -49,7 +48,7 @@ const Header = ({isHero=false, isLife=false, className} : HeaderProps) => {
             justifyContent: `space-between`,
           }}
         >
-          <HeaderTitle isHero={isHero} isLife={isLife} />
+          <HeaderTitle color={bgColor !== `#000` ? `#000`:`#fff`} />
             <div sx={{width: `25%`}}>
               <div 
                 sx={{
@@ -68,10 +67,10 @@ const Header = ({isHero=false, isLife=false, className} : HeaderProps) => {
                     fontWeight: `normal`,
                     my: 0,
                     pt: `0.5rem`,
-                    color: isLife || !isHero ? tailwind.colors.gray[8]:tailwind.colors.gray[4],
+                    color: bgColor !== `#000` ? tailwind.colors.gray[8]:tailwind.colors.gray[4],
                     transition: `color 0.3s ease`,
                     "&:hover": {
-                      color: isLife || !isHero ? `#000`: `#fff`,
+                      color: bgColor !== `#000` ? `#000`: `#fff`,
                       transition: `color 0.3s ease`,
                     }
                   },
@@ -98,10 +97,10 @@ const Header = ({isHero=false, isLife=false, className} : HeaderProps) => {
                     fontWeight: `normal`,
                     my: 0,
                     pt: `0.5rem`,
-                    color: isLife || !isHero ? tailwind.colors.gray[8]:tailwind.colors.gray[4],
+                    color: bgColor !== `#000` ? tailwind.colors.gray[8]:tailwind.colors.gray[4],
                     transition: `color 0.3s ease`,
                     "&:hover": {
-                      color: isLife || !isHero ? `#000`: `#fff`,
+                      color: bgColor !== `#000` ? `#000`: `#fff`,
                       transition: `color 0.3s ease`,
                     }
                   },
@@ -123,7 +122,7 @@ const Header = ({isHero=false, isLife=false, className} : HeaderProps) => {
                     "&:checked + label + div": {
                       height: `40vh`,
                       borderBottom: `0.5px solid`,
-                      borderColor: isLife || !isHero ? tailwind.colors.gray[4]:tailwind.colors.gray[8],
+                      borderColor: bgColor !== `#000` ? tailwind.colors.gray[4]:tailwind.colors.gray[8],
                     }
                   }}
                 />
@@ -141,7 +140,7 @@ const Header = ({isHero=false, isLife=false, className} : HeaderProps) => {
                       position: `absolute`,
                       height: `1px`,
                       borderRadius: `30px`,
-                      background: isLife || !isHero ? `#000`: `#fff`,
+                      background: bgColor !== `#000` ? `#000`: `#fff`,
                       transition: `all .35s`
                     }
                   }}
@@ -163,12 +162,12 @@ const Header = ({isHero=false, isLife=false, className} : HeaderProps) => {
                     overflow: `hidden`,
                     textAlign: `center`,
                     h4: {
-                      color: isLife || !isHero ? tailwind.colors.gray[8]:tailwind.colors.gray[4],
+                      color: bgColor !== `#000` ? tailwind.colors.gray[8]:tailwind.colors.gray[4],
                       fontWeight: `normal`,
                       fontSize: `22px`,
                       transition: `color 0.3s ease`,
                       "&:hover": {
-                        color: isLife || !isHero ? `#000`: `#fff`,
+                        color: bgColor !== `#000` ? `#000`: `#fff`,
                         transition: `color 0.3s ease`,
                       }
                     }
@@ -187,7 +186,6 @@ const Header = ({isHero=false, isLife=false, className} : HeaderProps) => {
               </div>
             </div>
         </Flex>
-        
       </div>
     </header>
   )

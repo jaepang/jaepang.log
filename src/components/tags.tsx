@@ -19,15 +19,16 @@ const Tags = ({ list }: PostsProps) => {
   const { tagsPath, basePath } = useMinimalBlogConfig()
 
   return (
-    <Layout>
+    <Layout bgColor={`#fff`}>
       <SEO title="Tags" />
       <Heading variant="styles.h2">Tags</Heading>
-      <Box mt={[4, 5]}>
+      <Box mt={`18vh`}>
         {list.map((listItem) => (
           <Flex key={listItem.fieldValue} mb={[1, 1, 2]} sx={{ display: `inline-block`, alignItems: `center`, px: `1rem` }}>
             <TLink
               as={Link}
-              sx={{ variant: `links.listItem`, 
+              sx={{ 
+                variant: `links.listItem`, 
                 mr: 2,
                 display: `block`,
               }}

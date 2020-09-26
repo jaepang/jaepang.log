@@ -47,7 +47,7 @@ const Homepage = ({ posts }: PostsProps) => {
   const fill = tailwind.colors.gray[8]
   useEffect(() => {setGridLayout(localStorage.getItem("gridLayout"))})
   return (
-    <Layout isHero={true}>
+    <Layout isHero={true} bgColor={`#000`}>
       <section 
         sx={{
           fontSize: 0,
@@ -81,7 +81,10 @@ const Homepage = ({ posts }: PostsProps) => {
             position: `relative`,
             maxWidth: `1220px`,
             margin: `0 auto`,
-            pr: `35%`
+            pr: `35%`,
+            "@media screen and (max-width: 1300px)": {
+              pr: 0
+            },
           }}
         >
         <Hero/>
