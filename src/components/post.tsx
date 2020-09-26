@@ -3,7 +3,6 @@ import { jsx, Heading } from "theme-ui"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import React from "react"
 import Layout from "./layout"
-import PostHeader from "./post-header"
 import ItemTags from "./item-tags"
 import Utterance from "./utterance"
 import SEO from "./seo"
@@ -53,7 +52,7 @@ const heroStyle = {
     pr: `40%`,
     zIndex: `1`,
     h2: {
-      fontSize: `44px`,
+      fontSize: [`30px`, `35px`, `40px`, `44px`],
       mb: `1.5rem`
     },
     "@media screen and (max-width: 1400px)": {
@@ -78,7 +77,7 @@ const imageStyle = {
 }
 
 const Post = ({ data: { post } }: PostProps) => (
-  <Layout>
+  <Layout bgColor="#FAFAFA">
     <SEO
       title={post.title}
       description={post.description ? post.description : post.excerpt}

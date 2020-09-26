@@ -20,7 +20,9 @@ const ItemTags = ({ tags, isOnList=false }: TagsProps) => {
     bg: isOnList ? null:`inlineCode`,
     px: isOnList ? null:`1rem`,
     py: isOnList ? null:`0.5rem`,
+    mb: isOnList ? `0.5rem`:null,
     borderRadius: isOnList ? null:`5px`,
+    fontSize: [`0.7rem`,`1rem`],
     a: {
       "hover": {
         border: `none !important`

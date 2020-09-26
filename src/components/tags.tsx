@@ -19,7 +19,7 @@ const Tags = ({ list }: PostsProps) => {
   const { tagsPath, basePath } = useMinimalBlogConfig()
 
   return (
-    <Layout bgColor={`#fff`}>
+    <Layout bgColor={`#fff`} className={`tags`}>
       <SEO title="Tags" />
       <Heading variant="styles.h2">Tags</Heading>
       <Box mt={`18vh`}>
