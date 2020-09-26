@@ -73,6 +73,9 @@ const Layout = ({ children, className = ``, isHero=false, bgColor=`transparent` 
         ".life .nav-life": {
           color: `#000`
         },
+        ".tags .nav-tags": {
+          color: `#000`
+        },
       })}
     />
     <SEO />

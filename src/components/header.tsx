@@ -174,7 +174,7 @@ const Header = ({isHero=false, bgColor=`transparent`, className} : HeaderProps) 
                   }}
                 >
                   <Link to="/tags">
-                    <h4>Tags</h4>
+                    <h4 className="nav-tags">Tags</h4>
                   </Link>
                   <Link to="/tags/dev">
                     <h4 className="nav-dev">Dev</h4>
