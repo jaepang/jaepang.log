@@ -82,7 +82,7 @@ const Homepage = ({ posts }: PostsProps) => {
             maxWidth: `1220px`,
             margin: `0 auto`,
             pr: `35%`,
-            "@media screen and (max-width: 1300px)": {
+            "@media screen and (max-width: 900px)": {
               pr: 0
             },
           }}
@@ -90,13 +90,17 @@ const Homepage = ({ posts }: PostsProps) => {
         <Hero/>
         <img src="/homeHero.png"
           sx={{
-            display: `inline-block`,
             position: `absolute`,
-            top: 0,
+            top: `50%`,
             right: 0,
-            transform: `translateY(-25%)`,
-            width: `50%`,
-            "@media screen and (max-width: 1300px)": {
+            zIndex: `11`,
+            width: `30vw`,
+            borderRadius: `20px`,
+            overFlow: `hidden`,
+            objectFit: `cover`,
+            transform: `translateY(-50%)`,
+            objectPosition: `center center`,
+            "@media screen and (max-width: 1400px)": {
               display: `none`
             },
           }}

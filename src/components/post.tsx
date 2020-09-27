@@ -60,7 +60,7 @@ const heroStyle = {
       fontSize: [`30px`, `35px`, `40px`, `44px`],
       mb: `0.5rem`
     },
-    "@media screen and (max-width: 1400px)": {
+    "@media screen and (max-width: 900px)": {
       pr: 0
     },
   }
@@ -102,12 +102,9 @@ const Post = ({ data: { post, site } }: PostProps) => (
         {post.tags && (
           <ItemTags tags={post.tags} isOnList={false} />
         )}
-        {post.banner ? (
-            <img src= {post.banner.childImageSharp.resize.src} sx={imageStyle}/>
-          ):(
-            <img src= {"/post.png"} sx={imageStyle}/>
-          )
-        }
+        {post.banner && (<img src= {post.banner.childImageSharp.resize.src} sx={imageStyle}/>)}
+        {(!post.banner && post.tags[0].slug !== "dev") && (<img src= {"/post.png"} sx={imageStyle}/>)}
+        {(!post.banner && post.tags[0].slug === "dev") && (<img src= {"/code.png"} sx={imageStyle}/>)}
       </div>
     </div>
     <section sx={{ mt: 5, mb: 6, ".gatsby-resp-image-wrapper": { my: [4, 4, 5], boxShadow: shadow.join(`, `) } }}>
