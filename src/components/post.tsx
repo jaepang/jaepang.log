@@ -112,10 +112,12 @@ const Post = ({ data: { post } }: PostProps) => (
     <section sx={{ mt: 5, mb: 6, ".gatsby-resp-image-wrapper": { my: [4, 4, 5], boxShadow: shadow.join(`, `) } }}>
       <MDXRenderer>{post.body}</MDXRenderer>
     </section>
-    {post.tags && (
-      <ItemTags tags={post.tags} isOnList={false} />
-    )}
-    <Utterance repo={`jaepang/jaepang.log`} />
+    <section sx={{maxWidth: `680px`, margin: `0 auto`}}>
+      {post.tags && (
+        <ItemTags tags={post.tags} isOnList={false} />
+      )}
+      <Utterance repo={`jaepang/jaepang.log`} />
+    </section>
   </Layout>
 )
 
