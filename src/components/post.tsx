@@ -125,7 +125,6 @@ const Post = ({ data: { post, site } }: PostProps) => (
       <FacebookProvider appId={site.siteMetadata.facebookAppID}>
         <Comments href="YOUR_HOMEPAGE_ADDRESS" />
       </FacebookProvider>
-      <Utterance repo={`jaepang/jaepang.log`} />
     </section>
   </Layout>
 )

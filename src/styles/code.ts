@@ -24,6 +24,7 @@ const code = {
     mb: 4,
     maxWidth: `725px`,
     margin: `0 auto`,
+    mt: `-0.5rem`
   },
   ".prism-code": {
     fontFamily: `Ubuntu Mono`,
@@ -203,6 +204,24 @@ const code = {
     mt: `0.5rem`,
     mb: `-0.5rem`
     //mx: [0, 0, 0, -3],
+  },
+  ".code-copy": {
+    position: `absolute`,
+    top: 2,
+    right: `0.5rem`,
+    border: `none`,
+    borderRadius: `5px`,
+    bg: `#2C3643`,
+    color: `rgb(134, 142, 150)`,
+    cursor: `pointer`,
+    padding: `8px 12px 7px`,
+    transition: `background 0.3s ease`,
+    "&:hover": {
+      bg: `#222A34`,
+    },
+    "@media screen and (max-width: 640px)": {
+      display: `none`
+    }
   },
   ".token-line": {
     pr: 3,

@@ -1,10 +1,11 @@
 /* eslint react/destructuring-assignment: 0 */
-import React from "react"
+import React, { useState } from "react"
 import Highlight, { defaultProps } from "prism-react-renderer"
 import loadable from "@loadable/component"
 import theme from "../prism-react-renderer/themes/chester"
 import useMinimalBlogConfig from "../hooks/use-minimal-blog-config"
 import { Language } from "../types"
+import Icons from "./icons"
 
 type CodeProps = {
   codeString: string
@@ -12,6 +13,50 @@ type CodeProps = {
   noLineNumbers?: boolean
   metastring?: string
   [key: string]: any
+}
+
+function copyToClipboard(toCopy: string) {
+  const el = document.createElement(`textarea`);
+  el.value = toCopy;
+  el.setAttribute(`readonly`, ``);
+  el.style.position = `absolute`;
+  el.style.left = `-9999px`;
+  document.body.appendChild(el);
+  el.select();
+  document.execCommand(`copy`);
+  document.body.removeChild(el);
+}
+interface CopyProps {
+  toCopy: string
+}
+
+const Copy: React.FC<CopyProps> = ({ toCopy }) => {
+  const [hasCopied, setHasCopied] = useState<boolean>(false);
+
+  function copyToClipboardOnClick() {
+    if (hasCopied) return
+
+    copyToClipboard(toCopy);
+    setHasCopied(true)
+
+    setTimeout(() => {
+      setHasCopied(false);
+    }, 2000)
+  }
+
+  return (
+    <button className="code-copy" onClick={copyToClipboardOnClick} data-a11y="false">
+      {hasCopied ? (
+        <>
+          Copied <Icons.Copied fill="rgb(134, 142, 150)" />
+        </>
+      ) : (
+        <>
+          Copy <Icons.Copy fill="rgb(134, 142, 150)" />
+        </>
+      )}
+    </button>
+  )
 }
 
 function getParams(className = ``) {
@@ -80,7 +125,7 @@ const Code = ({
     return <LazyLiveProvider code={codeString} noInline theme={theme} />
   }
   return (
-    <Highlight {...defaultProps} code={codeString} language={language} theme={theme}>
+    <Highlight {...defaultProps} code={codeString} language={language} theme={theme} sx={{position: `relative`}}>
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <React.Fragment>
           {title && (
@@ -89,6 +134,7 @@ const Code = ({
             </div>
           )}
           <div className="gatsby-highlight" data-language={language} style={title ? null : radius}>
+            <Copy toCopy={codeString} />
             <pre className={className} style={style} data-linenumber={hasLineNumbers}>
               {tokens.map((line, i) => {
                 const lineProps = getLineProps({ line, key: i })
