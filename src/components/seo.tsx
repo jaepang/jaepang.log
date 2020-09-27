@@ -22,6 +22,7 @@ const SEO = ({ title = ``, description = ``, pathname = ``, image = ``, children
     siteLanguage,
     siteImage: defaultImage,
     author,
+    facebookAppID
   } = site
 
   const seo = {
@@ -41,6 +42,7 @@ const SEO = ({ title = ``, description = ``, pathname = ``, image = ``, children
       <meta property="og:image" content={seo.image} />
       <meta property="og:type" content="website" />
       <meta property="og:image:alt" content={seo.description} />
+      <meta property="fb:app_id" content={facebookAppID} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={seo.title} />
       <meta name="twitter:url" content={seo.url} />

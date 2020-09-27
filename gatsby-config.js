@@ -14,6 +14,7 @@ module.exports = {
     siteLanguage: `ko/en`,
     siteImage: `/banner.jpg`,
     author: `@jaepang`,
+    facebookAppID: process.env.MYBLOG_FACEBOOK_APP_ID
   },
   plugins: [
     {

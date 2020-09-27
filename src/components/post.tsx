@@ -5,6 +5,7 @@ import React from "react"
 import Layout from "./layout"
 import ItemTags from "./item-tags"
 import Utterance from "./utterance"
+import { FacebookProvider, Comments } from 'react-facebook'
 import SEO from "./seo"
 
 type PostProps = {
@@ -27,6 +28,11 @@ type PostProps = {
             src: string
           }
         }
+      }
+    }
+    site: {
+      siteMetadata: {
+        facebookAppID
       }
     }
   }
@@ -76,7 +82,7 @@ const imageStyle = {
   },
 }
 
-const Post = ({ data: { post } }: PostProps) => (
+const Post = ({ data: { post, site } }: PostProps) => (
   <Layout bgColor="#FAFAFA">
     <SEO
       title={post.title}
@@ -116,6 +122,9 @@ const Post = ({ data: { post } }: PostProps) => (
       {post.tags && (
         <ItemTags tags={post.tags} isOnList={false} />
       )}
+      <FacebookProvider appId={site.siteMetadata.facebookAppID}>
+        <Comments href="http://54.180.85.182:8000/" />
+      </FacebookProvider>
       <Utterance repo={`jaepang/jaepang.log`} />
     </section>
   </Layout>
