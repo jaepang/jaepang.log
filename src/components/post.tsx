@@ -123,7 +123,7 @@ const Post = ({ data: { post, site } }: PostProps) => (
         <ItemTags tags={post.tags} isOnList={false} />
       )}
       <FacebookProvider appId={site.siteMetadata.facebookAppID}>
-        <Comments href="http" />
+        <Comments href="YOUR_HOMEPAGE_ADDRESS" />
       </FacebookProvider>
       <Utterance repo={`jaepang/jaepang.log`} />
     </section>
