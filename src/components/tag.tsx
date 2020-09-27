@@ -41,8 +41,8 @@ const Tag = ({ posts, pageContext }: TagProps) => {
   return (
     <Layout bgColor={`#fff`}>
       <SEO title={`Tag: ${pageContext.name}`} />
-      <Flex sx={{ alignItems: `center`, justifyContent: `space-between`, flexFlow: `wrap` }}>
-        <Heading sx={{fontFamily: `Pacifico`}} variant="styles.h2"># {pageContext.name}</Heading>
+      <Flex sx={{ alignItems: `center`, justifyContent: `space-between`, flexFlow: `wrap`, mt: `18vh`, mb: `2rem` }}>
+        <Heading sx={{fontFamily: `Pacifico`, margin: 0}} variant="styles.h2"># {pageContext.name}</Heading>
         <TLink as={Link} sx={{ variant: `links.secondary` }} to={replaceSlashes(`/${basePath}/${tagsPath}`)}>
           View all tags
         </TLink>
