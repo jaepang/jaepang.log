@@ -4,7 +4,6 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 import React from "react"
 import Layout from "./layout"
 import ItemTags from "./item-tags"
-import Utterance from "./utterance"
 import { FacebookProvider, Comments } from 'react-facebook'
 import SEO from "./seo"
 
@@ -68,14 +67,14 @@ const heroStyle = {
 }
 const imageStyle = {
   position: `absolute`,
-  top: `-25%`,
-  right: `0`,
+  top: `50%`,
+  right: 0,
   zIndex: `11`,
-  width: `45%`,
-  height: `150%`,
+  width: `30vw`,
   borderRadius: `20px`,
   overFlow: `hidden`,
   objectFit: `cover`,
+  transform: `translateY(-50%)`,
   objectPosition: `center center`,
   "@media screen and (max-width: 1400px)": {
     display: `none`
@@ -103,16 +102,12 @@ const Post = ({ data: { post, site } }: PostProps) => (
         {post.tags && (
           <ItemTags tags={post.tags} isOnList={false} />
         )}
-        {post.banner && (
-            <img src= {post.banner.childImageSharp.resize.src}
-            sx={imageStyle}
-          />
-        )}
-        {!post.banner && (
-            <img src= {"/banner.jpg"}
-            sx={imageStyle}
-          />
-        )}
+        {post.banner ? (
+            <img src= {post.banner.childImageSharp.resize.src} sx={imageStyle}/>
+          ):(
+            <img src= {"/post.png"} sx={imageStyle}/>
+          )
+        }
       </div>
     </div>
     <section sx={{ mt: 5, mb: 6, ".gatsby-resp-image-wrapper": { my: [4, 4, 5], boxShadow: shadow.join(`, `) } }}>
