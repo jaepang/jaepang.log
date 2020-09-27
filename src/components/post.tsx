@@ -59,7 +59,7 @@ const heroStyle = {
     zIndex: `1`,
     h2: {
       fontSize: [`30px`, `35px`, `40px`, `44px`],
-      mb: `1.5rem`
+      mb: `0.5rem`
     },
     "@media screen and (max-width: 1400px)": {
       pr: 0
@@ -93,16 +93,16 @@ const Post = ({ data: { post, site } }: PostProps) => (
     <div className="post-hero" sx={heroStyle}>
       <div className="post-hero-content">
         <Heading className="post-title" variant="styles.header">{post.title}</Heading>
-        {post.tags && (
-          <ItemTags tags={post.tags} isOnList={false} />
-        )}
-        <p sx={{ color: `secondary`, mt: 3, a: { color: `secondary` }, fontSize: 1 }}>
+        <p sx={{ color: `secondary`, mt: 0, ml: 1, mb: 3, a: { color: `secondary` }, fontSize: 1 }}>
           <time>{post.date}</time>
           <React.Fragment>
             {` — `}
           </React.Fragment>
           {post.timeToRead && <span>{post.timeToRead}분이면 읽을 수 있어요</span>}
         </p>
+        {post.tags && (
+          <ItemTags tags={post.tags} isOnList={false} />
+        )}
         {post.banner && (
             <img src= {post.banner.childImageSharp.resize.src}
             sx={imageStyle}
