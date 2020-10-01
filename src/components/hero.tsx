@@ -130,13 +130,7 @@ const Hero = ({ posts, pageContext }: HeroProps) => {
         />
         </div>
       </section>
-      <section
-        sx={{
-          position: `absolute`,
-          top: `100vh`,
-          left: 0
-        }}
-      >
+      <section sx={{pt: `100vh`}}>
         <div className="gridToggle"
           sx={{
             position: `relative`,
