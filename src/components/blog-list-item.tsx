@@ -113,16 +113,9 @@ const BlogListItem = ({ isTile = true, post, showTags = true }: BlogListItemProp
         }
       }}
     >
-      {post.banner && (
-          <img src= {post.banner.childImageSharp.resize.src}
-          sx={imageStyle}
-        />
-      )}
-      {!post.banner && (
-          <img src= {"/banner.jpg"}
-          sx={imageStyle}
-        />
-      )}
+      {post.banner && (<img src= {post.banner.childImageSharp.resize.src} sx={imageStyle}/>)}
+      {(!post.banner && post.tags[0].slug !== "dev") && (<img src= {"/post.png"} sx={imageStyle}/>)}
+      {(!post.banner && post.tags[0].slug === "dev") && (<img src= {"/code.png"} sx={imageStyle}/>)}
       <div sx={{pl: !isTile ? '5%':0}}>
         <h4 
           sx={{ 
@@ -161,6 +154,7 @@ const BlogListItem = ({ isTile = true, post, showTags = true }: BlogListItemProp
             color: `sub`, 
             my: 1, 
             fontSize: `0.75rem !important`,
+            display: showTags ? null:`none`
           }}
         >
           {post.timeToRead}min to read
