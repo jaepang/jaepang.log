@@ -203,6 +203,10 @@ const Homepage = ({ posts }: PostsProps) => {
             "@media screen and (max-width: 1300px)": {
               px: `2.5rem`,
             },
+          },
+          h3: {
+            fontWeight: `normal`,
+            color: `rgb(134, 142, 150)`,
           }
         }}
       >
@@ -216,7 +220,7 @@ const Homepage = ({ posts }: PostsProps) => {
             },
           }}
         >
-          <h4>Recent Post</h4>
+          <h3>Recent Post</h3>
           <div className="featured-post-block" sx={linkBlockStyle}>
             <BlogListItem key={posts[0].slug} post={posts[0]} showTags={false} />
           </div>
@@ -231,7 +235,7 @@ const Homepage = ({ posts }: PostsProps) => {
             },
           }}
         >
-          <h4>Topics</h4>
+          <h3>Topics</h3>
           <div className="link-wrapper"
             sx={{
               display: `grid`,
